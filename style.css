@@ -17,6 +17,18 @@ body {
     font-size: 3em;
 }
 
+.content a:link {
+    color: ghostwhite;
+}
+
+.content a:hover {
+    color: black;
+}
+
+.content a:visited {
+    color: lightgray;
+}
+
 h1 {
     font-family: 'Aref Ruqaa', cursive;
     font-weight: 400;
