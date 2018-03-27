@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Aref+Ruqaa:400,700|Special+Elite|Zilla+Slab+Highlight:400,700');
+
+html {
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.3)), url("https://source.unsplash.com/rdVLN3UFmpU/1600x900") center;
+    background-size: cover;
+}
+
+.content {
+    text-align: center;
+    color: ghostwhite;
+    font-family: 'special elite', cursive;
+    font-weight: lighter;
+    font-size: 1.5em;
+}
+
+h1 {
+    text-align: center;
+    color: ghostwhite;
+    font-family: 'Zilla Slab Highlight', cursive;
+    font-weight: lighter;
+    font-size: 4em;
+}
+
+h2 {
+    text-align: center;
+    color: ghostwhite;
+    font-family: 'Aref Ruqaa', cursive;
+    font-weight: bolder;
+    font-size: 3em;
+}
+
+h3 {
+    text-align: center;
+    color: ghostwhite;
+    font-family: 'Aref Ruqaa', cursive;
+    font-weight: bolder;
+    font-size: 4em;
+}
