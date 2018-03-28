@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.3)), url("https://source.unsplash.com/CeZypKDceQc/4000×6016");
+    background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.3)), url("https://source.unsplash.com/7mbvu0biZgg/4188x2787");
     background-size: cover;
 }
 
@@ -20,7 +20,7 @@ body {
 h1 {
     text-align: center;
     color: ghostwhite;
-    font-family: 'Zilla Slab Highlight', cursive;
+    font-family: 'Aref Ruqaa', cursive;
     font-weight: lighter;
     font-size: 4em;
 }
