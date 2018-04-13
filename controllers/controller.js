@@ -1,3 +1,3 @@
-module.exports.renderPage = function (req, res) {
+module.exports.renderComingSoon = function (req, res) {
     res.render('index');
 }
