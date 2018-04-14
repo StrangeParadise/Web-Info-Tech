@@ -60,6 +60,7 @@ h1 {
 
 .lights:Hover .lightsOverlay {
     opacity: 1;
+    display: block;
 }
 
 .lightsText {
@@ -92,6 +93,7 @@ h1 {
 
 .heaven:Hover .heavenOverlay {
     opacity: 1;
+    display: block;
 }
 
 .heavenText {

@@ -1,0 +1,28 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.3)), url("https://source.unsplash.com/F3iTPkZ9t2U/5184x3456");
+    background-size: cover;
+}
+
+.login {
+    color: ghostwhite;
+    font-family: "Do Hyeon";
+    font-weight: lighter;
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    margin-top: 2em;
+}
+
+.register {
+    color: ghostwhite;
+    font-family: "Do Hyeon";
+    font-weight: lighter;
+    position: absolute;
+    top: 40%;
+    left: 60%;
+    margin-top: 2em;
+}
