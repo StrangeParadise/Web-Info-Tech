@@ -7,6 +7,14 @@ body {
     background-size: cover;
 }
 
+h1 {
+    color: ghostwhite;
+    font-family: "Do Hyeon";
+    font-weight: lighter;
+    font-size: 4em;
+    text-align: center;
+}
+
 .login {
     color: ghostwhite;
     font-family: "Do Hyeon";
