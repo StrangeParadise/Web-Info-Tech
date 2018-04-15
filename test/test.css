@@ -55,7 +55,7 @@ h1 {
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: black;
+    background-color: #008CBA;
 }
 
 .lights:Hover .lightsOverlay {
@@ -85,7 +85,7 @@ h1 {
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: black;
+    background-color: #008CBA;
 }
 
 .heaven:Hover .heavenOverlay {
