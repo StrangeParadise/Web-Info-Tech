@@ -12,7 +12,6 @@ h1 {
     font-weight: lighter;
     font-size: 4em;
     left: 0;
-    line-height: 200px;
     margin-top: -100px;
     position: absolute;
     text-align: center;
@@ -41,3 +40,64 @@ h1 {
 .enter:hover {
     background-color: black;
 }
+
+.lights {
+    position: relative;
+}
+
+.lightsOverlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: black;
+}
+
+.lights:Hover .lightsOverlay {
+    opacity: 1;
+    display: block;
+}
+
+.lightsText {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+.heaven {
+    position: relative;
+}
+
+.heavenOverlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: black;
+}
+
+.heaven:Hover .heavenOverlay {
+    opacity: 1;
+    display: block;
+}
+
+.heavenText {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+

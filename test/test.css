@@ -60,17 +60,15 @@ h1 {
 
 .lights:Hover .lightsOverlay {
     opacity: 1;
+    display: block;
 }
 
 .lightsText {
     color: white;
     font-size: 20px;
-    /*position: absolute;*/
-    /*top: 50%;*/
-    /*left: 50%;*/
-    /*transform: translate(-50%, -50%);*/
-    /*-ms-transform: translate(-50%, -50%);*/
-    /*text-align: center;*/
+    position: absolute;
+    top: 0%;
+    left: 0%;
 }
 
 .heaven {
@@ -92,16 +90,14 @@ h1 {
 
 .heaven:Hover .heavenOverlay {
     opacity: 1;
+    display: block;
 }
 
 .heavenText {
     color: white;
     font-size: 20px;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
+    top: 0%;
+    left: 0%;
 }
 
