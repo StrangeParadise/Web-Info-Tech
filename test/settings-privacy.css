@@ -127,6 +127,12 @@ hr{
     Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     text-align: center;
 }
+
+#contentArea{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 .lfloat{
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",
     Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
