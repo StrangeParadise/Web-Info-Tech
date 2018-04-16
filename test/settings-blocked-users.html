@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Settings</title>
-    <link href="settings.css" rel="stylesheet" type="text/css" />
+    <link href="settings-blocked-users.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="main-framework">
@@ -25,7 +25,7 @@
         <!-- left -->
         <div id="main-framework-body-left">
             <ul id="navigation-list">
-                <li>Friends</li>
+                <li><a href="#Friends">Friends</a></li>
                 <li>Groups</li>
                 <li>Favorites</li>
                 <li>Family Tree</li>
@@ -43,11 +43,48 @@
                     <li><a href="settings.html">Profile</a></li>
                     <li><a href="settings-account.html">Account</a></li>
                     <li><a href="settings-privacy.html">Privacy</a></li>
-                    <li><a href="settings-blocked-users.html">Blocked useres</a></li>
-                    <li><a href="settings-security.html">Security</a></li>
+                    <li><a href="settings-blocked-users.html">Blocked users</a></li>
                 </ul>
             </div>
 
+            <div id="blocked-users">
+                <div>
+                    <h2 class="subhead">Block a user</h2>
+                    <hr>
+                    <div class="content">
+                        <div id="blocking-info">
+                            <p>Blocking a user prevents them from</p>
+                            <ul class="info">
+                                <li>a</li>
+                                <li>b</li>
+                                <li>c</li>
+                                <li>d</li>
+                                <li>e</li>
+                                <li>f</li>
+                            </ul>
+                            <br>
+                        </div>
+
+                        <form id="block-a-user">
+                            Search by full name or email address<br>
+                            <input type="text" placeholder="Search..">
+                            <button id="block-btn" type="submit">Block user</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="bu-2">
+                    <h2 class="subhead">Blocked users</h2>
+                    <hr>
+                    <div class="box">
+                        <ul class="js-blocked-list">
+                            <div class="empty">
+                                You have not blocked any users yet.
+                            </div>
+                        </ul>
+                    </div>
+                 </div>
+            </div>
         </div>
 
         <!-- clear -->

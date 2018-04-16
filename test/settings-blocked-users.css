@@ -54,7 +54,7 @@ p {
     height:130px;
 }
 
-#user-portrait img{
+#user-portrait img {
     width:100%;
     height:100%;
 }
@@ -83,9 +83,22 @@ p {
     min-height:150px;
 }
 
-.block-bottom{
+.block-bottom {
     padding:10px;
     text-align:right;
+}
+
+.block-main {
+    min-height:800px;
+    font-family: Arial;
+    font-size: 2em;
+    text-align: center;
+}
+
+.friends {
+    font-family: Arial;
+    font-size: large;
+    text-align: left;
 }
 
 #navigation-list-settings {
@@ -122,45 +135,63 @@ hr{
     background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
 }
 
-#change-password{
+#blocked-users{
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",
     Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-#page-title{
+.subhead{
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",
+    Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     text-align: center;
 }
-
-#form-group{
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",
-    Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-    margin-top: 15px;
+#blocking-info{
     margin-left: 15px;
-    font-size: larger;
+    margin-top: 15px;
+    font-weight: bold;
 }
-button[type=submit] {
-    width: 440px;
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+.info{
+    font-weight: normal;
 }
 
-button[type=submit]:hover {
-    background-color: #45a049;
-}
-.form-control{
+input[type=text]{
     width: 440px;
     max-width: 100%;
     min-height: 34px;
     margin-right: 5px;
     margin-top: 6px;
-    background-color: #fafafc;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
+}
+#block-a-user{
+    margin-left: 15px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+#block-btn{
+    width: 120px;
+    font-size: 16px;
+    height: 34px;
+    text-align: center;
+}
+
+#bu-2{
+    margin-top: 100px;
+    marign-left: 15px;
+}
+
+.box{
+    margin-left: 15px;
+    width: 60%;
+    height: 50%;
+    background-color: #fff;
+    border: 1px solid #d1d5da;
+    border-radius: 3px;
+
+}
+
+.empty{
+    padding: 32px;
+    text-align: center;
 }
