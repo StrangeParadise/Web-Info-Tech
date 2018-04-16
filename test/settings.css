@@ -118,7 +118,7 @@ hr {
     background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
     background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
     background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-    background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0)
+    background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
 }
 
 #page-title{
@@ -145,13 +145,16 @@ hr {
 #changeButton button{
     width: 80%;
     font-size: small;
-    background-color: green;
+    background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+#changeButton button:hover{
+    background-color: #45a049;
 }
 .column-two-thirds{
    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,
@@ -182,11 +185,14 @@ hr {
 #update-button{
     width: 20%;
     font-size: small;
-    background-color: green;
+    background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+#update-button:hover{
+    background-color: #45a049;
 }

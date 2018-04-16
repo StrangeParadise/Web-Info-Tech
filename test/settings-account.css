@@ -112,20 +112,34 @@ p {
     background-color: #111111;
 }
 
-#change-password{
-    margin-left: 8px;
+hr{
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
 }
-input[type=password]{
-    width: 50%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box;
+
+#change-password{
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",
+    Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+#page-title{
+    text-align: center;
+}
+
+#form-group{
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",
+    Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: larger;
 }
 button[type=submit] {
-    width: 50%;
+    width: 440px;
+    font-size: 16px;
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
@@ -137,4 +151,15 @@ button[type=submit] {
 
 button[type=submit]:hover {
     background-color: #45a049;
+}
+.form-control{
+    width: 440px;
+    max-width: 100%;
+    min-height: 34px;
+    margin-right: 5px;
+    margin-top: 6px;
+    background-color: #fafafc;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
 }
