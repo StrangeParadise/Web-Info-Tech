@@ -6,6 +6,8 @@ router.get('/', controller.renderIndex);
 router.get('/comingSoon', controller.renderComingSoon);
 router.get('/login&register', controller.renderLoginRegister);
 router.get('/homepage', controller.renderHomepage);
+router.get('/profile', controller.renderProfile);
+router.get('/experience', controller.renderExperience);
 
 
 module.exports = router;
