@@ -11,6 +11,7 @@ router.get('/experience', controller.renderExperience);
 router.get('/friends', controller.renderFriends);
 router.get('/zoranHomepage', controller.renderZoranHomepage);
 router.get('/settings', controller.renderSettings);
+router.get('/settingsAccount', controller.renderSettingsAccount);
 
 
 

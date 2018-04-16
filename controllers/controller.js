@@ -25,3 +25,6 @@ module.exports.renderZoranHomepage = function (req, res) {
 module.exports.renderSettings = function (req, res) {
     res.render('settings');
 }
+module.exports.renderSettingsAccount = function (req, res) {
+    res.render('settingsAccount');
+}
