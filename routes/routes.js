@@ -9,7 +9,7 @@ router.get('/homepage', controller.renderHomepage);
 router.get('/profile', controller.renderProfile);
 router.get('/experience', controller.renderExperience);
 router.get('/friends', controller.renderFriends);
-router.get('/zoranHomepage', controller.renderZoranHomepage());
+router.get('/zoranHomepage', controller.renderZoranHomepage);
 
 
 
