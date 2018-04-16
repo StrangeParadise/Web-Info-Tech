@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Settings</title>
-    <link href="settings.css" rel="stylesheet" type="text/css" />
+    <link href="settings-privacy.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="main-framework">
@@ -47,6 +47,93 @@
                 </ul>
             </div>
 
+            <div id="subhead">
+                <h1 id="page-title">Privacy</h1>
+                <hr>
+            </div>
+
+
+
+
+            <div id="contentArea">
+                <div id="settingsPage_content">
+                    <ul>
+                        <li>
+                            <div class="clearfix">
+                                <h3 class="lfloat">Your Activity</h3>
+                                <div class="rfloat">
+                                    <ul>
+                                        <form>
+                                        <li>Who can see your future posts?
+                                            <select class="selector">
+                                                <option value="all">All</option>
+                                                <option value="friends only">Friends Only</option>
+                                                <option value="only me">Only Me</option>
+                                        </select>
+                                        </li>
+                                            <hr>
+                                        <li>Who can see your wishes?
+                                            <select class="selector">
+                                                <option value="all">All</option>
+                                                <option value="friends only">Friends Only</option>
+                                                <option value="only me">Only Me</option>
+                                            </select>
+                                        </li>
+                                            <hr>
+                                        <li>Who can see your family tree?
+                                            <select class="selector">
+                                                <option value="all">All</option>
+                                                <option value="friends only">Friends Only</option>
+                                                <option value="only me">Only Me</option>
+                                            </select>
+                                        </li>
+                                        </form>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <hr>
+                        <li>
+                            <div class="clearfix">
+                                <h3 class="lfloat">How Can People Find and Contact You</h3>
+                                <div class="rfloat">
+                                    <ul>
+                                        <form id="contact-form">
+                                            <li>Who can send you friend requests?
+                                                <select class="selector">
+                                                    <option value="everyone">Everyone</option>
+                                                    <option value="friends of friends">Friends of Friends</option>
+                                                </select>
+                                            </li>
+                                            <hr>
+                                            <li>Who can look you up using the email address you provided?
+                                                <select class="selector">
+                                                    <option value="everyone">Everyone</option>
+                                                    <option value="friends of friends">Friends of Friends</option>
+                                                    <option value="friends">Friends</option>
+                                                </select>
+                                            </li>
+                                                <hr>
+                                            <li>Who can see your friend list?
+                                                <select class="selector">
+                                                    <option value="everyone">Everyone</option>
+                                                    <option value="friends">Friends</option>
+                                                    <option value="only me">Only Me</option>
+                                                </select>
+                                            </li>
+                                        </form>
+                                    </ul>
+                                </div>
+                            </div>
+                         </li>
+                        <hr>
+                    </ul>
+                </div>
+            </div>
+            <form>
+                <button type="submit" id="saveBtn">Save</button>
+            </form>
+            </div>
         </div>
 
         <!-- clear -->
