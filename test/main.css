@@ -87,3 +87,7 @@ p {
 	padding:10px;
 	text-align:right;
 }
+
+.block-main{
+	min-height:800px;
+}
