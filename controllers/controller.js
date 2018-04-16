@@ -22,3 +22,6 @@ module.exports.renderFriends = function (req, res) {
 module.exports.renderZoranHomepage = function (req, res) {
     res.render('zoranHomepage');
 }
+module.exports.renderSettings = function (req, res) {
+    res.render('settings');
+}
