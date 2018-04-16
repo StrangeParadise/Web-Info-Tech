@@ -20,7 +20,7 @@ p {
 #main-framework-header {
     height:200px;
     border-bottom:solid 1px rgb(100,100,100);
-    background-image:url("/img/cat.jpg");
+    background-image:url("/img/header.jpg");
     background-size:100% 100%;
     background-repeat:no-repeat;
 }
