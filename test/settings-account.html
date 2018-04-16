@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Settings</title>
-    <link href="settings.css" rel="stylesheet" type="text/css" />
+    <link href="settings-account.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="main-framework">
@@ -47,18 +47,19 @@
                     <li><a href="settings-security.html">Security</a></li>
                 </ul>
             </div>
+            <div id="change-password">
             <h2>Change Password</h2>
-
             <form id="change_password">
                 Old password<br>
-                <input type="text" name="oldpassword"><br>
+                <input type="password" name="oldpassword"><br>
                 New password<br>
-                <input type="text" name="newpassword"><br>
+                <input type="password" name="newpassword"><br>
                 Confirm new password<br>
-                <input type="text" name="confirm_new_password"><br>
+                <input type="password" name="confirm_new_password"><br>
                 <button type="submit">Update password</button>
                 <span><a href="/password_reset">I forgot my passowrd</a></span>
             </form>
+            </div>
         </div>
 
         <!-- clear -->
