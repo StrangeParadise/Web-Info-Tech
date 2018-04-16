@@ -16,3 +16,6 @@ module.exports.renderProfile = function (req, res) {
 module.exports.renderExperience = function (req, res) {
     res.render('experience');
 }
+module.exports.renderFriends = function (req, res) {
+    res.render('friends');
+}
