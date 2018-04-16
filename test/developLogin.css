@@ -34,3 +34,7 @@ h1 {
     left: 60%;
     margin-top: 2em;
 }
+input[type=text]{
+    width: 120px;
+    margin-left: 3px;
+}
