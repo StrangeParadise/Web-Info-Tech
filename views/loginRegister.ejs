@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Lights in the Heaven</title>
-    <link href="/css/loginRegister.css" rel="stylesheet" type="text/css">
+    <link href="/css/developLogin.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <h1>Lights in the Heaven</h1>
 <div class="login">
     <h1>Login</h1>
     <form action="/homepage">
-        Username: <input type="text" name="username"><br>
-        Password: <input type="text" name="password"><br>
+        Username<br>
+        <input type="text" name="username"><br>
+        Password<br>
+        <input type="password" name="password"><br>
         <input type="checkbox" name="rememberUsername">Remember Username<br>
         <input type="checkbox" name="autoLogin">Auto-login<br>
         <input type="submit" value="Login" onclick="">
@@ -21,11 +23,17 @@
 <div class="register">
     <h1>Register</h1>
     <form action="/homepage">
-        Email: <input type="text" name="email"><br>
-        Username: <input type="text" name="username"><br>
-        Password: <input type="text" name="password"><br>
-        Repeat Password: <input type="text" name="repeatPassword"><br>
-        Gender: <input type="checkbox" name="male">Male<input type="checkbox" name="female">Female<input type="checkbox" name="otherGender">Other<br>
+        Email<br>
+        <input type="email" name="email"><br>
+        Username<br>
+        <input type="text" name="username"><br>
+        Password<br>
+        <input type="password" name="password"><br>
+        Confirm Password<br>
+        <input type="password" name="repeatPassword"><br>
+        Gender: <input type="radio" name="gender" value="male">Male
+        <input type="radio" name="gender" value="female">Female
+        <input type="radio" name="gender" value="other">Other<br>
         Date of Birth:
         <select name="DOBMonth">
             <option> - Month - </option>
