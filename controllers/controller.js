@@ -19,3 +19,6 @@ module.exports.renderExperience = function (req, res) {
 module.exports.renderFriends = function (req, res) {
     res.render('friends');
 }
+module.exports.renderZoranHomepage = function (req, res) {
+    res.render('zoranHomepage');
+}
