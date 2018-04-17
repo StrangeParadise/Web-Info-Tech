@@ -1,0 +1,103 @@
+html {
+    height: 100%;
+}
+body {
+    background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.3)), url("https://source.unsplash.com/F3iTPkZ9t2U/5184x3456");
+    background-size: cover;
+}
+
+h1 {
+    color: ghostwhite;
+    font-family: cursive;
+    font-weight: lighter;
+    font-size: 4em;
+    left: 0;
+    margin-top: -100px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.enter {
+    color: ghostwhite;
+    background: Transparent no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    position: absolute;
+    top: 80%;
+    font-family: cursive;
+    font-size: 2em;
+}
+
+.enter:hover {
+    background-color: black;
+}
+
+.lights {
+    position: relative;
+}
+
+.lightsOverlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+}
+
+.lights:Hover .lightsOverlay {
+    opacity: 1;
+    display: block;
+}
+
+.lightsText {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+.heaven {
+    position: relative;
+}
+
+.heavenOverlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+}
+
+.heaven:Hover .heavenOverlay {
+    opacity: 1;
+    display: block;
+}
+
+.heavenText {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
