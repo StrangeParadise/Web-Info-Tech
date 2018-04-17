@@ -28,3 +28,13 @@ module.exports.renderSettings = function (req, res) {
 module.exports.renderSettingsAccount = function (req, res) {
     res.render('settingsAccount');
 }
+module.exports.renderSettingsPrivacy = function (req, res) {
+    res.render('settingsPrivacy');
+}
+module.exports.renderSettingsBlockedUsers = function (req, res) {
+    res.render('settingsBlockedUsers');
+}
+module.exports.renderSettingsSecurity = function (req, res) {
+    res.render('settingsSecurity');
+}
+

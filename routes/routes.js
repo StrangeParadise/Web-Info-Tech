@@ -12,6 +12,9 @@ router.get('/friends', controller.renderFriends);
 router.get('/zoranHomepage', controller.renderZoranHomepage);
 router.get('/settings', controller.renderSettings);
 router.get('/settingsAccount', controller.renderSettingsAccount);
+router.get('/settingsPrivacy', controller.renderSettingsPrivacy);
+router.get('/settingsBlockedUsers', controller.renderSettingsBlockedUsers);
+router.get('/settingsSecurity', controller.renderSettingsSecurity);
 
 
 

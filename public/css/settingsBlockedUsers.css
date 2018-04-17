@@ -1,0 +1,197 @@
+body {
+    margin:0px;
+    background-image:url("/img/bk.jpg");
+    opacity:0.8;
+}
+
+p {
+    padding:0px;
+    margin:0px;
+}
+/* about main framework */
+#main-framework {
+    width:1200px;
+    min-height:1000px;
+    margin:0 auto;
+    background-color:white;
+    border:solid 1px rgb(100,100,100);
+}
+
+#main-framework-header {
+    height:200px;
+    border-bottom:solid 1px rgb(100,100,100);
+    background-image:url("/img/header.jpg");
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+}
+
+#main-framework-body {
+    width:100%;
+}
+
+#main-framework-body-left {
+    width:20%;
+    min-height:800px;
+    float:left;
+}
+
+#main-framework-body-right {
+    width:calc(80% - 1px);
+    min-height:800px;
+    float:left;
+    border-left:solid 1px rgb(100,100,100);
+}
+
+/* about user information */
+#user-info {
+    margin-top:20px;
+    margin-right:20px;
+    float:right;
+}
+
+#user-portrait {
+    width:130px;
+    height:130px;
+}
+
+#user-portrait img {
+    width:100%;
+    height:100%;
+}
+
+#user-id {
+    text-align:center;
+    color:white;
+}
+
+/* about list */
+#navigation-list {
+    list-style-type:none;
+}
+
+#navigation-list li {
+    margin: 20px 0px;
+}
+
+/* about blocks*/
+.block {
+    border-bottom:solid 1px rgb(100,100,100);
+}
+
+.block-content {
+    padding:10px;
+    min-height:150px;
+}
+
+.block-bottom {
+    padding:10px;
+    text-align:right;
+}
+
+.block-main {
+    min-height:800px;
+    font-family: Arial;
+    font-size: 2em;
+    text-align: center;
+}
+
+.friends {
+    font-family: Arial;
+    font-size: large;
+    text-align: left;
+}
+
+#navigation-list-settings {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+#navigation-list-settings li {
+    width: 25%;
+    float: left;
+}
+
+#navigation-list-settings li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+#navigation-list-settings li a:hover {
+    background-color: #111111;
+}
+
+hr{
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+}
+
+#blocked-users{
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",
+    Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.subhead{
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",
+    Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    text-align: center;
+}
+#blocking-info{
+    margin-left: 15px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+.info{
+    font-weight: normal;
+}
+
+input[type=text]{
+    width: 440px;
+    max-width: 100%;
+    min-height: 34px;
+    margin-right: 5px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+#block-a-user{
+    margin-left: 15px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+#block-btn{
+    width: 120px;
+    font-size: 16px;
+    height: 34px;
+    text-align: center;
+}
+
+#bu-2{
+    margin-top: 100px;
+    marign-left: 15px;
+}
+
+.box{
+    margin-left: 15px;
+    width: 60%;
+    height: 50%;
+    background-color: #fff;
+    border: 1px solid #d1d5da;
+    border-radius: 3px;
+
+}
+
+.empty{
+    padding: 32px;
+    text-align: center;
+}
