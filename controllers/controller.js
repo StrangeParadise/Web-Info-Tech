@@ -43,4 +43,7 @@ module.exports.renderShares = function (req, res) {
 module.exports.renderWishes = function (req, res) {
     res.render('wishes');
 }
+module.exports.renderLatestWishes = function (req, res) {
+    res.render('latestWishes');
+}
 
