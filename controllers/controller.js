@@ -37,4 +37,7 @@ module.exports.renderSettingsBlockedUsers = function (req, res) {
 module.exports.renderFamilyTree = function (req, res) {
     res.render('familyTree');
 }
+module.exports.renderShares = function (req, res) {
+    res.render('shares');
+}
 

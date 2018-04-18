@@ -15,6 +15,7 @@ router.get('/settingsAccount', controller.renderSettingsAccount);
 router.get('/settingsPrivacy', controller.renderSettingsPrivacy);
 router.get('/settingsBlockedUsers', controller.renderSettingsBlockedUsers);
 router.get('/familyTree', controller.renderFamilyTree);
+router.get('/shares', controller.renderShares);
 
 
 
