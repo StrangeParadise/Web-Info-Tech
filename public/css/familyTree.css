@@ -1,0 +1,235 @@
+body {
+    margin:0px;
+    background-image:url("/img/bk.jpg");
+    opacity:0.8;
+}
+
+p {
+    padding:0px;
+    margin:0px;
+}
+/* about main framework */
+#main-framework {
+    width:1200px;
+    min-height:1000px;
+    margin:0 auto;
+    background-color:white;
+    border:solid 1px rgb(100,100,100);
+}
+
+#main-framework-header {
+    height:200px;
+    border-bottom:solid 1px rgb(100,100,100);
+    background-image:url("/img/header.jpg");
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+}
+
+#main-framework-body-content {
+    width: 100%;
+    min-height:800px;
+    float:left;
+    border-left:solid 1px rgb(100,100,100);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* about user information */
+#user-info {
+    margin-top:20px;
+    margin-right:20px;
+    float:right;
+}
+
+#user-portrait {
+    width:130px;
+    height:130px;
+}
+
+#user-portrait img {
+    width:100%;
+    height:100%;
+}
+
+#user-id {
+    text-align:center;
+    color:white;
+}
+
+/* about list */
+#navigation-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+#navigation-list li {
+    width: 14.2857143%;
+    float: left;
+}
+#navigation-list li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+#navigation-list li a:hover{
+    background-color: #111111;
+}
+
+@font-face{
+    font-family: 'Hi Melody', cursive;
+    src: url("https://fonts.googleapis.com/css?family=Hi+Melody");
+}
+
+.header{
+    font-family: "Hi Melody";
+    text-align: center;
+    font-size: xx-large;
+}
+
+/*family tree diagram*/
+
+.tree{
+    width: inherit;
+    margin: auto;
+}
+.tree-uList {
+    padding-top: 20px;
+    position: relative;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+.tree-list {
+    float: left;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 30px 10px 0 10px;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+/*use ::before and ::after to draw the connectors*/
+
+.tree-list::before, .tree-list::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 1px solid #ccc;
+    width: 50%;
+    height: 30px;
+}
+.tree-list::after{
+    right: auto;
+    left: 50%;
+    border-left: 1px solid #ccc;
+}
+
+/*remove left-right connectors from elements without any siblings*/
+/*remove left connector of the first child and the right connector of the last child*/
+.tree-list:only-child::after, .tree-list:only-child::before,
+.tree-list:first-child::before, .tree-list:last-child::after {
+    display: none;
+}
+
+/*Remove space from the top of single children*/
+.tree-list:only-child{
+    padding-top: 0;
+}
+
+/*Adding back the vertical connector to the last nodes*/
+.tree-list:last-child::before{
+    border-right: 1px solid #ccc;
+    border-radius: 0 5px 0 0;
+    -webkit-border-radius: 0 5px 0 0;
+    -moz-border-radius: 0 5px 0 0;
+}
+.tree-list:first-child::after{
+    border-radius: 5px 0 0 0;
+    -webkit-border-radius: 5px 0 0 0;
+    -moz-border-radius: 5px 0 0 0;
+}
+
+/*Add downward connectors from parents*/
+.tree-uList ul::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 1px solid #ccc;
+    width: 0;
+    height: 20px;
+}
+
+.tree-list a{
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #666;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",
+    Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 11px;
+    display: inline-block;
+
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+.container{
+    position: relative;
+    width: 60px;
+}
+
+.img-circle{
+    opacity: 1;
+    display: block;
+    width: 60px;
+    border-radius: 50%;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle{
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+.addBtn{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}
+
+.container:hover .img-circle{
+    opacity: 0.3;
+}
+.container:hover .middle{
+    opacity: 1;
+}
+
+
+
+
+

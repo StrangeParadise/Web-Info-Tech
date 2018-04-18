@@ -34,7 +34,7 @@ module.exports.renderSettingsPrivacy = function (req, res) {
 module.exports.renderSettingsBlockedUsers = function (req, res) {
     res.render('settingsBlockedUsers');
 }
-module.exports.renderSettingsSecurity = function (req, res) {
-    res.render('settingsSecurity');
+module.exports.renderFamilyTree = function (req, res) {
+    res.render('familyTree');
 }
 
