@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Settings</title>
-    <link href="settings.css" rel="stylesheet" type="text/css">
+    <title>Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="settings.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
 <div id="main-framework">
 
     <!-- up -->
     <div id="main-framework-header">
         <div id="user-info">
-            <div id="user-portrait">
-                <img src="img/47.jpg">
-            </div>
-            <div id="user-id">
-                Admin
-            </div>
+            <a href="homepage">
+                <div id="user-portrait">
+                    <img src="img/47.jpg" />
+                </div>
+                <div id="user-id">
+                    Admin
+                </div></a>
         </div>
     </div>
 
     <div id="main-framework-body">
-
-        <!-- left -->
         <div id="main-framework-body-left">
             <ul id="navigation-list">
                 <li><a href="homepage">Home</a></li>
@@ -31,15 +31,13 @@
                 <li><a href="homepage">Favorites</a></li>
                 <li><a href="homepage">Family Tree</a></li>
                 <li><a href="homepage">Wish Lists</a></li>
-                <li><a href="settings">Settings</a></li>
+                <li><a href="settings.html">Settings</a></li>
             </ul>
         </div>
 
         <!-- right -->
         <div id="main-framework-body-right">
-
-            <!-- block1 -->
-            <div class="block">
+            <div id="left-block">
                 <ul id="navigation-list-settings">
                     <li><a href="settings.html">Profile</a></li>
                     <li><a href="settings-account.html">Account</a></li>
@@ -47,10 +45,9 @@
                     <li><a href="settings-blocked-users.html">Blocked users</a></li>
                 </ul>
             </div>
-            <div id="page-title">
-                <h2>Public Profile</h2>
+            <div id="right-block">
+                <h2 id="page-title">Public Profile</h2>
                 <hr>
-            </div>
             <div id="imgContainer">
                 <div id="user-image">
                     <img src="img/47.jpg" alt="user portrait">
@@ -76,6 +73,7 @@
                 </form>
             </div>
             <hr>
+            </div>
         </div>
 
         <!-- clear -->

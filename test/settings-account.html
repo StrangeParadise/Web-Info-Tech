@@ -1,45 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Settings</title>
-    <link href="settings-account.css" rel="stylesheet" type="text/css">
+    <title>Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="settings-account.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
 <div id="main-framework">
 
     <!-- up -->
     <div id="main-framework-header">
         <div id="user-info">
-            <div id="user-portrait">
-                <img src="img/47.jpg">
-            </div>
-            <div id="user-id">
-                Admin
-            </div>
+            <a href="homepage">
+                <div id="user-portrait">
+                    <img src="img/47.jpg" />
+                </div>
+                <div id="user-id">
+                    Admin
+                </div></a>
         </div>
     </div>
 
     <div id="main-framework-body">
-
-        <!-- left -->
         <div id="main-framework-body-left">
             <ul id="navigation-list">
                 <li><a href="homepage">Home</a></li>
-                <li><a href="homepage">Friends</a></li>
+                <li><a href="friends">Friends</a></li>
                 <li><a href="homepage">Groups</a></li>
                 <li><a href="homepage">Favorites</a></li>
                 <li><a href="homepage">Family Tree</a></li>
                 <li><a href="homepage">Wish Lists</a></li>
-                <li><a href="homepage">Settings</a></li>
+                <li><a href="settings.html">Settings</a></li>
             </ul>
         </div>
 
         <!-- right -->
         <div id="main-framework-body-right">
-
-            <!-- block1 -->
-            <div class="block">
+            <div id="left-block">
                 <ul id="navigation-list-settings">
                     <li><a href="settings.html">Profile</a></li>
                     <li><a href="settings-account.html">Account</a></li>
@@ -47,26 +45,23 @@
                     <li><a href="settings-blocked-users.html">Blocked users</a></li>
                 </ul>
             </div>
-
-            <div id="change-password">
-            <h2 id="page-title">Change Password</h2>
+            <div id="right-block">
+                <h2 id="page-title">Change Password</h2>
                 <hr>
+                <div id="form-group">
+                    <form>
+                        Old password<br>
+                        <input class="form-control" type="password" name="oldpassword"><br><br>
+                        New password<br>
+                        <input class="form-control" type="password" name="newpassword"><br><br>
+                        Confirm new password<br>
+                        <input class="form-control" type="password" name="confirm_new_password"><br><br>
+                        <button type="submit">Update password</button>
+                        <span><a href="/password_reset">I forgot my passowrd</a></span>
+                    </form>
+                    <hr>
+                </div>
             </div>
-
-            <div id="form-group">
-            <form>
-                Old password<br>
-                <input class="form-control" type="password" name="oldpassword"><br><br>
-                New password<br>
-                <input class="form-control" type="password" name="newpassword"><br><br>
-                Confirm new password<br>
-                <input class="form-control" type="password" name="confirm_new_password"><br><br>
-                <button type="submit">Update password</button>
-                <span><a href="/password_reset">I forgot my passowrd</a></span>
-            </form>
-                <hr>
-            </div>
-
         </div>
 
 
