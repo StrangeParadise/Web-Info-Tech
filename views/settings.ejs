@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Settings</title>
-    <link href="/css/settings.css" rel="stylesheet" type="text/css">
+    <title>Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/css/settings.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
 <div id="main-framework">
 
@@ -12,24 +13,22 @@
     <div id="main-framework-header">
         <div id="user-info">
             <a href="homepage">
-            <div id="user-portrait">
-                <img src="img/47.jpg">
-            </div>
-            <div id="user-id">
-                Ryner
-            </div></a>
+                <div id="user-portrait">
+                    <img src="/img/47.jpg" />
+                </div>
+                <div id="user-id">
+                    Ryner
+                </div></a>
         </div>
     </div>
 
     <div id="main-framework-body">
-
-        <!-- left -->
         <div id="main-framework-body-left">
             <ul id="navigation-list">
                 <li><a href="homepage">Home</a></li>
                 <li><a href="friends">Friends</a></li>
                 <li><a href="shares">Shares</a></li>
-                <li><a href="homepage">Family Tree</a></li>
+                <li><a href="familyTree">Family Tree</a></li>
                 <li><a href="homepage">Wish Lists</a></li>
                 <li><a href="settings">Settings</a></li>
             </ul>
@@ -37,9 +36,7 @@
 
         <!-- right -->
         <div id="main-framework-body-right">
-
-            <!-- block1 -->
-            <div class="block">
+            <div id="left-block">
                 <ul id="navigation-list-settings">
                     <li><a href="settings">Profile</a></li>
                     <li><a href="settingsAccount">Account</a></li>
@@ -47,35 +44,35 @@
                     <li><a href="settingsBlockedUsers">Blocked users</a></li>
                 </ul>
             </div>
-            <div id="page-title">
-                <h2>Public Profile</h2>
+            <div id="right-block">
+                <h2 id="page-title">Public Profile</h2>
+                <hr>
+                <div id="imgContainer">
+                    <div id="user-image">
+                        <img src="/img/47.jpg" alt="user portrait">
+                    </div>
+                    <div id="changeButton">
+                        <button value="Upload image">Upload new picture</button>
+                    </div>
+                </div>
+
+                <div class="column-two-thirds">
+                    <form class="form-group">
+                        Name<br>
+                        <input class="form-control" type="text"><br><br>
+                        Occupation<br>
+                        <input class="form-control" type="text"><br><br>
+                        Bio<br>
+                        <textarea class="form-control"
+                                  placeholder="Tell us a little bit about yourself" id="user-profile-bio"></textarea>
+                        <br><br>
+                        Location<br>
+                        <input class="form-control" type="text"><br><br>
+                        <button id="update-button" tpye="button">Update profile</button>
+                    </form>
+                </div>
                 <hr>
             </div>
-            <div id="imgContainer">
-                <div id="user-image">
-                    <img src="img/47.jpg" alt="user portrait">
-                </div>
-                <div id="changeButton">
-                    <button value="Upload image">Upload new picture</button>
-                </div>
-            </div>
-
-            <div class="column-two-thirds">
-                <form class="form-group">
-                    Name<br>
-                    <input class="form-control" type="text"><br><br>
-                    Occupation<br>
-                    <input class="form-control" type="text"><br><br>
-                    Bio<br>
-                    <textarea class="form-control"
-                              placeholder="Tell us a little bit about yourself" id="user-profile-bio"></textarea>
-                    <br><br>
-                    Location<br>
-                    <input class="form-control" type="text"><br><br>
-                    <button id="update-button" tpye="button">Update profile</button>
-                </form>
-            </div>
-            <hr>
         </div>
 
         <!-- clear -->
