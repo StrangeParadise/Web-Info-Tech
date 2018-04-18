@@ -25,14 +25,12 @@ p {
     background-repeat:no-repeat;
 }
 
-#main-framework-body-content {
-    width: 100%;
-    min-height:800px;
-    float:left;
-    border-left:solid 1px rgb(100,100,100);
+#main-framework-body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
+
+
 
 /* about user information */
 #user-info {
@@ -46,7 +44,7 @@ p {
     height:130px;
 }
 
-#user-portrait img {
+#user-portrait img{
     width:100%;
     height:100%;
 }
@@ -68,6 +66,7 @@ p {
 #navigation-list li {
     width: 14.2857143%;
     float: left;
+
 }
 
 #navigation-list li a{
@@ -83,39 +82,24 @@ p {
 
 
 #navigation-list-settings {
-    list-style-type:none;
+    list-style-type: none;
 }
 
 #navigation-list-settings li {
     margin: 20px 0px;
 }
 
-/* about blocks*/
-.block {
-    border-bottom:solid 1px rgb(100,100,100);
-}
-
-.block-content {
-    padding:10px;
-    min-height:150px;
-}
-
-.block-bottom {
-    padding:10px;
-    text-align:right;
-}
-
-.block-main {
+#left-block{
+    width:20%;
     min-height:800px;
-    font-family: Arial;
-    font-size: 2em;
-    text-align: center;
+    float:left;
 }
 
-.friends {
-    font-family: Arial;
-    font-size: large;
-    text-align: left;
+#right-block{
+    width:calc(80% - 1px);
+    min-height:800px;
+    float:left;
+    border-left:solid 1px rgb(100,100,100);
 }
 
 hr{
