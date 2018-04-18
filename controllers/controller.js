@@ -40,4 +40,7 @@ module.exports.renderFamilyTree = function (req, res) {
 module.exports.renderShares = function (req, res) {
     res.render('shares');
 }
+module.exports.renderWishes = function (req, res) {
+    res.render('wishes');
+}
 
