@@ -18,7 +18,7 @@ router.get('/familyTree', controller.renderFamilyTree);
 router.get('/shares', controller.renderShares);
 router.get('/wishes', controller.renderWishes);
 router.get('/latestWishes', controller.renderLatestWishes);
-
+router.get('/wishesEdit', controller.renderWishesEdit);
 
 
 module.exports = router;

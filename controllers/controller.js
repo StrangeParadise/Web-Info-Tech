@@ -46,4 +46,7 @@ module.exports.renderWishes = function (req, res) {
 module.exports.renderLatestWishes = function (req, res) {
     res.render('latestWishes');
 }
+module.exports.renderWishesEdit = function (req, res) {
+    res.render('wishesEdit');
+}
 
