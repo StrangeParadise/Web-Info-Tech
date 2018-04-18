@@ -49,4 +49,7 @@ module.exports.renderLatestWishes = function (req, res) {
 module.exports.renderWishesEdit = function (req, res) {
     res.render('wishesEdit');
 }
+module.exports.renderRemember = function (req, res) {
+    res.render('remember');
+}
 
