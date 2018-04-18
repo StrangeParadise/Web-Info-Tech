@@ -1,6 +1,7 @@
 body {
     margin:0px;
     background-image:url("img/bk.jpg");
+    background-size: cover;
     opacity:0.8;
 }
 

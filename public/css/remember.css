@@ -5,7 +5,8 @@ html {
 
 body {
     margin:0px;
-    background-image:url("/img/bk.jpg");
+    background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.3)), url("https://source.unsplash.com/YeUVDKZWSZ4/4671x3114");
+    background-size: cover;
     opacity:0.8;
 }
 
