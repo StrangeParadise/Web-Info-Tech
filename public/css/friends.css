@@ -13,6 +13,9 @@ body {
 .shadow {
     box-shadow: 0px 0px 5px 0px;
     padding-top: 10px;
+    font-family: Arial;
+    font-size: 40px;
+    text-align: left;
 }
 
 p {
@@ -82,6 +85,7 @@ p {
     width: 14.2857143%;
     float: left;
 }
+
 #navigation-list li a{
     display: block;
     color: white;
@@ -117,7 +121,15 @@ p {
 }
 
 .friends {
-    font-family: Arial;
-    font-size: large;
-    text-align: left;
+    color: black;
+    text-decoration: none;
+}
+
+.friends:hover{
+    background-color: chocolate;
+}
+
+.friends a{
+    color: black;
+    text-decoration: none;
 }
