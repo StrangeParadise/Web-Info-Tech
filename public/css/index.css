@@ -35,6 +35,7 @@ h1 {
     top: 80%;
     font-family: cursive;
     font-size: 2em;
+    text-decoration: none;
 }
 
 .enter:hover {
