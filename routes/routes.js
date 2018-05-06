@@ -21,5 +21,13 @@ router.get('/latestWishes', controller.renderLatestWishes);
 router.get('/wishesEdit', controller.renderWishesEdit);
 router.get('/remember', controller.renderRemember);
 
+// DB part
+router.post('/api',controller.createUser);
+
+router.get('/api',controller.findAllUsers);
+
+// router.get('/api/:id',controller.findOneCafe);
 
 module.exports = router;
+
+
