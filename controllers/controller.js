@@ -53,47 +53,35 @@ module.exports.renderRemember = function (req, res) {
     res.render('remember');
 }
 
+// var mongoose = require('mongoose');
+// var User = mongoose.model('User');
 
-var mongoose = require('mongoose');
-var User = mongoose.model('User');
-
-var createUser = function(req,res){
-    var user = new User({
-        "firstName": req.body.firstName,
-        "lastName": req.body.lastName,
-        "gender": req.body.gender,
-        "DOB": req.body.DOB
-    });
-    user.save(function(err,newUser){
-        if(!err){
-            res.send(newUser);
-        }else{
-            res.sendStatus(400);
-        }
-    });
-};
-
-var findAllUsers = function(req,res){
-    User.find(function(err,user){
-        if(!err){
-            res.send(user);
-        }else{
-            res.sendStatus(404);
-        }
-    });
-};
-
-// var findOneCafe = function(req,res){
-//     var cafeInx = req.params.id;
-//     Cafe.findById(cafeInx,function(err,cafe){
+// var createUser = function(req,res){
+//     var user = new User({
+//         "firstName": req.body.firstName,
+//         "lastName": req.body.lastName,
+//         "gender": req.body.gender,
+//         "DOB": req.body.DOB
+//     });
+//     user.save(function(err,newUser){
 //         if(!err){
-//             res.send(cafe);
+//             res.send(newUser);
+//         }else{
+//             res.sendStatus(400);
+//         }
+//     });
+// };
+//
+// var findAllUsers = function(req,res){
+//     User.find(function(err,user){
+//         if(!err){
+//             res.send(user);
 //         }else{
 //             res.sendStatus(404);
 //         }
 //     });
 // };
-
-module.exports.createUser = createUser;
-module.exports.findAllUsers = findAllUsers;
+//
+// module.exports.createUser = createUser;
+// module.exports.findAllUsers = findAllUsers;
 // module.exports.findOneCafe = findOneCafe;
