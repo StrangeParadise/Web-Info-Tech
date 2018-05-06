@@ -1,3 +1,5 @@
+require('../models/users.js');
+
 module.exports.renderIndex = function (req, res) {
     res.render('index');
 }
@@ -51,6 +53,10 @@ module.exports.renderWishesEdit = function (req, res) {
 }
 module.exports.renderRemember = function (req, res) {
     res.render('remember');
+}
+
+module.exports.getUsers = function (req, res) {
+    res.send(users);
 }
 
 // var mongoose = require('mongoose');

@@ -13,9 +13,9 @@ app.use(router);
 // Database setup
 // require('./models/db.js');
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, function(){
-    console.log(`Express listening on port ${PORT}`);
+const port = process.env.PORT || 3000;
+app.listen(port, function(){
+    console.log(`Express listening on port ${port}`);
 });
 
 

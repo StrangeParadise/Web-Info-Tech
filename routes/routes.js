@@ -21,7 +21,9 @@ router.get('/latestWishes', controller.renderLatestWishes);
 router.get('/wishesEdit', controller.renderWishesEdit);
 router.get('/remember', controller.renderRemember);
 
+
 // DB part
+router.get('/api/users',controller.getUsers);
 // router.post('/api',controller.createUser);
 //
 // router.get('/api',controller.findAllUsers);
