@@ -1,25 +1,35 @@
 body {
 	margin:0px;
 	background-image:url("img/bk.jpg");
-	opacity:0.8;
+	background-repeat:no-repeat;
+	background-color: rgb(205, 212, 209);
 }
 
 p {
 	padding:0px;
 	margin:0px;
 }
+
+a{
+	font-weight:normal;
+	border: none;
+	color:rgb(51,136,255);
+	text-decoration:none;
+}
+a:hover{
+	cursor:pointer;
+	color:rgb(132,184,255);
+}
 /* about main framework */
 #main-framework {
-	width:1200px;
-	min-height:1000px;
+	width:920px;
 	margin:0 auto;
-	background-color:white;
-	border:solid 1px rgb(100,100,100);
 }
 
 #main-framework-header {
 	height:200px;
-	border-bottom:solid 1px rgb(100,100,100);
+	margin-bottom:20px;
+	border:solid 1px rgb(100,100,100);
 	background-image:url("img/header.jpg");
 	background-size:100% 100%;
 	background-repeat:no-repeat;
@@ -30,16 +40,19 @@ p {
 }
 
 #main-framework-body-left {
-	width:20%;
-	min-height:800px;
+	width:200px;
+	min-height:1000px;
+	background-color:white;
+	border:solid 1px rgb(100,100,100);
 	float:left;
 }
 
 #main-framework-body-right {
-	width:calc(80% - 1px);
-	min-height:800px;
-	float:left;
-	border-left:solid 1px rgb(100,100,100);
+	width:700px;
+	min-height:1000px;
+	background-color:white;
+	border:solid 1px rgb(100,100,100);
+	float:right;
 }
 
 /* about user information */
@@ -52,6 +65,7 @@ p {
 #user-portrait {
 	width:130px;
 	height:130px;
+	border:solid 1px rgb(100,100,100);
 }
 
 #user-portrait img {
@@ -60,8 +74,10 @@ p {
 }
 
 #user-id {
+	margin-top:5px;
 	text-align:center;
 	color:white;
+	text-shadow: black 3px 3px 3px;
 }
 
 /* about list */
@@ -75,7 +91,7 @@ p {
 
 /* about blocks*/
 .block {
-	border-bottom:solid 1px rgb(100,100,100);
+	border-bottom:solid 1px rgb(147,147,147);
 }
 
 .block-content {
@@ -90,7 +106,6 @@ p {
 
 .block-main{
 	padding:10px;
-	min-height:800px;
 }
 
 .wishimage{
@@ -100,10 +115,6 @@ p {
 
 #wish-list{
 	list-style-type:none;
-}
-.block-main {
-	min-height:800px;
-	font-family: Arial;
 }
 
 .friends {
