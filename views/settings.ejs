@@ -3,7 +3,7 @@
 <head>
     <title>Home</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="/css/settings.css" rel="stylesheet" type="text/css" />
+    <link href="css/settings.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -23,6 +23,8 @@
     </div>
 
     <div id="main-framework-body">
+
+        <!-- left -->
         <div id="main-framework-body-left">
             <ul id="navigation-list">
                 <li><a href="homepage">Home</a></li>
@@ -30,50 +32,49 @@
                 <li><a href="shares">Shares</a></li>
                 <li><a href="familyTree">Family Tree</a></li>
                 <li><a href="wishes">Wish Lists</a></li>
-                <li><a href="settings">Settings</a></li>
                 <li><a href="remember">Remember</a></li>
+                <li><a href="settings">Settings</a></li>
+                <li>
+                    <ul id="navigation-list-settings">
+                        <li>- <a href="settings">Profile</a></li>
+                        <li>- <a href="settingsAccount">Account</a></li>
+                        <li>- <a href="settingsPrivacy">Privacy</a></li>
+                        <li>- <a href="settingsBlockedUsers">Blocked users</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
 
         <!-- right -->
         <div id="main-framework-body-right">
-            <div id="left-block">
-                <ul id="navigation-list-settings">
-                    <li><a href="settings">Profile</a></li>
-                    <li><a href="settingsAccount">Account</a></li>
-                    <li><a href="settingsPrivacy">Privacy</a></li>
-                    <li><a href="settingsBlockedUsers">Blocked users</a></li>
-                </ul>
-            </div>
-            <div id="right-block">
-                <h2 id="page-title">Public Profile</h2>
-                <hr>
-                <div id="imgContainer">
-                    <div id="user-image">
-                        <img src="/img/47.jpg" alt="user portrait">
-                    </div>
-                    <div id="changeButton">
-                        <button value="Upload image">Upload new picture</button>
-                    </div>
-                </div>
 
-                <div class="column-two-thirds">
-                    <form class="form-group">
-                        Name<br>
-                        <input class="form-control" type="text"><br><br>
-                        Occupation<br>
-                        <input class="form-control" type="text"><br><br>
-                        Bio<br>
-                        <textarea class="form-control"
-                                  placeholder="Tell us a little bit about yourself" id="user-profile-bio"></textarea>
-                        <br><br>
-                        Location<br>
-                        <input class="form-control" type="text"><br><br>
-                        <button id="update-button" tpye="button">Update profile</button>
-                    </form>
+            <h2 id="page-title">Public Profile</h2>
+            <hr>
+            <div id="imgContainer">
+                <div id="user-image">
+                    <img src="/img/47.jpg" alt="user portrait">
                 </div>
-                <hr>
+                <div id="changeButton">
+                    <button value="Upload image">Upload new picture</button>
+                </div>
             </div>
+
+            <div class="column-two-thirds">
+                <form class="form-group">
+                    Name<br>
+                    <input class="form-control" type="text"><br><br>
+                    Occupation<br>
+                    <input class="form-control" type="text"><br><br>
+                    Bio<br>
+                    <textarea class="form-control"
+                              placeholder="Tell us a little bit about yourself" id="user-profile-bio"></textarea>
+                    <br><br>
+                    Location<br>
+                    <input class="form-control" type="text"><br><br>
+                    <button id="update-button" type="button">Update profile</button>
+                </form>
+            </div>
+
         </div>
 
         <!-- clear -->
