@@ -1,6 +1,6 @@
 require('../models/users.js');
 var mongoose = require('mongoose');
-var User = mongoose.model('Users');
+var User = mongoose.model('users');
 
 module.exports.renderIndex = function (req, res) {
     res.render('index');
@@ -61,8 +61,7 @@ var createUser = function(req,res){
     var user = new User({
         "firstName": req.body.firstName,
         "lastName": req.body.lastName,
-        "gender": req.body.gender,
-        "DOB": req.body.dob
+        "gender": req.body.gender
     });
     user.save(function(err,newUser){
         if(!err){
@@ -74,9 +73,9 @@ var createUser = function(req,res){
 };
 
 var findAllUsers = function(req,res){
-    User.find(function(err,Users){
+    User.find(function(err,users){
         if(!err){
-            res.send(Users);
+            res.send(users);
         }else{
             res.sendStatus(404);
         }
@@ -85,9 +84,9 @@ var findAllUsers = function(req,res){
 
 var findOneUser = function(req,res){
     var userID = req.params.id;
-    User.findById(userID,function(err,Users){
+    User.findById(userID,function(err,user){
         if(!err){
-            res.send(Users);
+            res.send(user);
         }else{
             res.sendStatus(404);
         }
