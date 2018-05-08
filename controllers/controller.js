@@ -58,15 +58,12 @@ module.exports.renderRemember = function (req, res) {
 }
 
 var createUser = function(req,res){
-    console.log("aaaaaaaaaaaaaaaaaa");
     console.log(req.body.firstName);
-    console.log("bbbbbbbbbb");
     var user = new User({
         "firstName": req.body.firstName,
         "lastName": req.body.lastName,
         "gender": req.body.gender
     });
-    console.log("夜夜夜夜夜夜夜夜夜夜夜");
     user.save(function(err,newUser){
         if(!err){
             res.send(newUser);
