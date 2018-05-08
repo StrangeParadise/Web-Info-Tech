@@ -5,7 +5,7 @@ var userSchema = mongoose.Schema(
         "firstName": String,
         "lastName": String,
         "gender": String,
-        "DOB": Date
+        "dob": Date
     }
 );
-mongoose.model('User', userSchema);
+mongoose.model('Users', userSchema);

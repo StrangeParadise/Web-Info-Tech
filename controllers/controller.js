@@ -1,4 +1,6 @@
 require('../models/users.js');
+var mongoose = require('mongoose');
+var User = mongoose.model('Users');
 
 module.exports.renderIndex = function (req, res) {
     res.render('index');
@@ -55,39 +57,44 @@ module.exports.renderRemember = function (req, res) {
     res.render('remember');
 }
 
-module.exports.getUsers = function (req, res) {
-    res.send(users);
-}
+var createUser = function(req,res){
+    var user = new User({
+        "firstName": req.body.firstName,
+        "lastName": req.body.lastName,
+        "gender": req.body.gender,
+        "DOB": req.body.dob
+    });
+    user.save(function(err,newUser){
+        if(!err){
+            res.send(newUser);
+        }else{
+            res.sendStatus(400);
+        }
+    });
+};
 
-// var mongoose = require('mongoose');
-// var User = mongoose.model('User');
+var findAllUsers = function(req,res){
+    User.find(function(err,Users){
+        if(!err){
+            res.send(Users);
+        }else{
+            res.sendStatus(404);
+        }
+    });
+};
 
-// var createUser = function(req,res){
-//     var user = new User({
-//         "firstName": req.body.firstName,
-//         "lastName": req.body.lastName,
-//         "gender": req.body.gender,
-//         "DOB": req.body.DOB
-//     });
-//     user.save(function(err,newUser){
-//         if(!err){
-//             res.send(newUser);
-//         }else{
-//             res.sendStatus(400);
-//         }
-//     });
-// };
-//
-// var findAllUsers = function(req,res){
-//     User.find(function(err,user){
-//         if(!err){
-//             res.send(user);
-//         }else{
-//             res.sendStatus(404);
-//         }
-//     });
-// };
-//
-// module.exports.createUser = createUser;
-// module.exports.findAllUsers = findAllUsers;
-// module.exports.findOneCafe = findOneCafe;
+var findOneUser = function(req,res){
+    var userID = req.params.id;
+    User.findById(userID,function(err,Users){
+        if(!err){
+            res.send(Users);
+        }else{
+            res.sendStatus(404);
+        }
+    });
+};
+
+
+module.exports.createUser = createUser;
+module.exports.findAllUsers = findAllUsers;
+module.exports.findOneUser = findOneUser;

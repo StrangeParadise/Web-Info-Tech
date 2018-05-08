@@ -23,12 +23,9 @@ router.get('/remember', controller.renderRemember);
 
 
 // DB part
-router.get('/api/users',controller.getUsers);
-// router.post('/api',controller.createUser);
-//
-// router.get('/api',controller.findAllUsers);
-
-// router.get('/api/:id',controller.findOneCafe);
+router.get('/api',controller.findAllUsers);
+router.post('/api',controller.createUser);
+router.get('/api/:id',controller.findOneUser);
 
 module.exports = router;
 

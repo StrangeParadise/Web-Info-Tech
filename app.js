@@ -11,7 +11,7 @@ app.use(router);
 
 
 // Database setup
-// require('./models/db.js');
+require('./models/db.js');
 
 const port = process.env.PORT || 3000;
 app.listen(port, function(){
