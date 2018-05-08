@@ -27,6 +27,8 @@ router.get('/api',controller.findAllUsers);
 router.post('/api',controller.createUser);
 router.get('/api/:id',controller.findOneUser);
 
+router.post('/remember', controller.createComment);
+
 module.exports = router;
 
 

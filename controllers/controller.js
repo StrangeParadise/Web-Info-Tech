@@ -1,6 +1,8 @@
 require('../models/users.js');
+require('../models/comment.js');
 var mongoose = require('mongoose');
 var User = mongoose.model('users');
+var Comment = mongoose.model('Comment');
 
 module.exports.renderIndex = function (req, res) {
     res.render('index');
@@ -98,7 +100,27 @@ var findOneUser = function(req,res){
     });
 };
 
+var createComment = function(req,res){
+    var comment = new Comment(
+        {
+            "comment":req.body.comment
+        }
+    );
+    comment.save(function(err,newComment)
+        {
+            if (!err){
+                res.send(newComment);
+            }
+            else{
+                res.sendStatus(400)
+            }
+        }
+    );
+};
+
 
 module.exports.createUser = createUser;
 module.exports.findAllUsers = findAllUsers;
 module.exports.findOneUser = findOneUser;
+
+module.exports.createComment = createComment;
