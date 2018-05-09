@@ -1,6 +1,10 @@
 require('../models/users.js');
+require('../models/comment.js');
+require('../models/epitaph.js');
 var mongoose = require('mongoose');
 var User = mongoose.model('users');
+var Comment = mongoose.model('Comment');
+var Epitaph = mongoose.model('Epitaph');
 
 module.exports.renderIndex = function (req, res) {
     res.render('index');
@@ -212,10 +216,21 @@ module.exports.updateWishes = function (req, res) {
 
 
 module.exports.renderRemember = function (req, res) {
-    res.render('remember');
+    Comment.find({}, function(err, docs){
+        if(!err){
+            res.render('remember', {comment:docs});
+        }
+        else{
+            res.sendStatus(404);
+        }
+    });
 }
 
+
 var createUser = function(req,res){
+
+    //console.log(req.body.firstName);
+
     var user = new User({
         "email": req.body.email,
         "userName": req.body.userName,
@@ -257,9 +272,61 @@ var findOneUser = function(req,res){
     });
 };
 
+var createComment = function(req,res){
+    var comment = new Comment(
+        {
+            "avatar": "/img/47.jpg",
+            "comment":req.body.comment,
+            "time": (new Date()).toLocaleString()
+        }
+    );
+    comment.save(function(err,newComment)
+        {
+            if (!err){
+                res.send(newComment);
+            }
+            else{
+                res.sendStatus(400)
+            }
+        }
+    );
+};
+
+var findComment = function(req,res){
+    Comment.find(function(err,comments){
+        if(!err){
+            res.send(comments);
+        }else{
+            res.sendStatus(404);
+        }
+    });
+};
+
+var createEpitaph = function(req,res){
+    var epitaph = new Epitaph(
+        {
+            "epitaph":req.body.epitaph,
+            "time": (new Date()).toLocaleString()
+        }
+    );
+    epitaph.save(function(err,newEpitaph)
+        {
+            if (!err){
+                res.send(newEpitaph);
+            }
+            else{
+                res.sendStatus(400)
+            }
+        }
+    );
+};
 
 
 
 module.exports.createUser = createUser;
 module.exports.findAllUsers = findAllUsers;
 module.exports.findOneUser = findOneUser;
+
+module.exports.createComment = createComment;
+module.exports.findComment = findComment;
+module.exports.createEpitaph = createEpitaph;

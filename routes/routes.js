@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/controller');
 
+
 router.get('/', controller.renderIndex);
 router.get('/comingSoon', controller.renderComingSoon);
 router.get('/login&register', controller.renderLoginRegister);
@@ -31,6 +32,11 @@ router.get('/homepage', controller.renderNewHomepage);
 router.get('/api',controller.findAllUsers);
 router.post('/homepage',controller.createUser);
 router.get('/api/:name',controller.findOneUser);
+
+router.get('/apii', controller.findComment);
+router.post('/remember', controller.createComment);
+
+router.post('/api2', controller.createEpitaph);
 
 module.exports = router;
 
