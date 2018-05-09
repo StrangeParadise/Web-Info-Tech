@@ -31,6 +31,8 @@ router.get('/api/:id',controller.findOneUser);
 router.get('/apii', controller.findComment);
 router.post('/remember', controller.createComment);
 
+router.post('/api2', controller.createEpitaph);
+
 module.exports = router;
 
 

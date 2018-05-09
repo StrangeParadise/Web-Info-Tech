@@ -1,8 +1,10 @@
 require('../models/users.js');
 require('../models/comment.js');
+require('../models/epitaph.js');
 var mongoose = require('mongoose');
 var User = mongoose.model('users');
 var Comment = mongoose.model('Comment');
+var Epitaph = mongoose.model('Epitaph');
 
 module.exports.renderIndex = function (req, res) {
     res.render('index');
@@ -138,6 +140,24 @@ var findComment = function(req,res){
     });
 };
 
+var createEpitaph = function(req,res){
+    var epitaph = new Epitaph(
+        {
+            "epitaph":req.body.epitaph,
+            "time": (new Date()).toLocaleString()
+        }
+    );
+    epitaph.save(function(err,newEpitaph)
+        {
+            if (!err){
+                res.send(newEpitaph);
+            }
+            else{
+                res.sendStatus(400)
+            }
+        }
+    );
+};
 
 module.exports.createUser = createUser;
 module.exports.findAllUsers = findAllUsers;
@@ -145,3 +165,4 @@ module.exports.findOneUser = findOneUser;
 
 module.exports.createComment = createComment;
 module.exports.findComment = findComment;
+module.exports.createEpitaph = createEpitaph;

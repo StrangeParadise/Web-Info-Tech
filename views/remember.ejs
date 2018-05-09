@@ -53,7 +53,12 @@
             <div class="block">
                 <div class="block-content">
                     <p>Epitaph</p>
-                    <p><br>...........</p>
+                    <div id="epitaph">
+                    <form method="post">
+                        <textarea id="epitaphText" name="Epitaph"></textarea>
+                        <input type="submit" value="Submit">
+                    </form>
+                    </div>
                 </div>
                 <div class="block-bottom">
                     &nbsp;&nbsp;20:00&nbsp;&nbsp;Jun 2,2018
@@ -64,19 +69,27 @@
             <div class="block">
                 <div class="block-main">
                     <p>Friends' Comments</p>
-                    <ul id="wish-list">
+                    <div class="list">
+                        <ul id="wish-list">
                         <% comment.forEach(function (comment) { %>
-                        <li><img src="<%= comment.avatar%>" class="avatar">
+                            <li>
+                            <img src="<%= comment.avatar%>" class="avatar">
                             <%= comment.comment %>
-                        </li>
+                                <div id="time">
+                                <%= comment.time%>
+                                </div>
+                                <hr>
                         <% }) %>
-                    </ul>
+
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="block-main">
                     <button class="collapsible">Comment</button>
                     <div id="comment">
-                        <form method="post" action="/remember" name="commentForm" onsubmit="return validateForm()">
+                        <form method="post" name="commentForm" onsubmit="return validateForm()">
                             <textarea id="commentText" name="comment"></textarea>
                             <input type="submit" value="Submit">
                         </form>
