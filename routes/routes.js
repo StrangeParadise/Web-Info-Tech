@@ -22,7 +22,7 @@ router.get('/wishes:name', controller.renderWishes);
 router.get('/latestWishes:name', controller.renderLatestWishes);
 router.get('/wishEdit:name', controller.renderWishesEdit);
 router.post('/wishEdit:name', controller.updateWishes);
-router.get('/remember', controller.renderRemember);
+router.get('/remember:name', controller.renderRemember);
 
 
 router.get('/homepage', controller.renderNewHomepage);
@@ -33,8 +33,8 @@ router.get('/api',controller.findAllUsers);
 router.post('/homepage',controller.createUser);
 router.get('/api/:name',controller.findOneUser);
 
-router.get('/apii', controller.findComment);
-router.post('/remember', controller.createComment);
+router.get('/api/comment', controller.findComment);
+router.post('/remember:name', controller.createComment);
 
 router.post('/api2', controller.createEpitaph);
 

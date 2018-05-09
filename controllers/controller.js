@@ -218,7 +218,7 @@ module.exports.updateWishes = function (req, res) {
 module.exports.renderRemember = function (req, res) {
     Comment.find({}, function(err, docs){
         if(!err){
-            res.render('remember', {comment:docs});
+            res.render('remember', {comment : docs});
         }
         else{
             res.sendStatus(404);
@@ -228,9 +228,7 @@ module.exports.renderRemember = function (req, res) {
 
 
 var createUser = function(req,res){
-
-    //console.log(req.body.firstName);
-
+    console.log(req.body.firstName);
     var user = new User({
         "email": req.body.email,
         "userName": req.body.userName,
@@ -247,7 +245,6 @@ var createUser = function(req,res){
             res.sendStatus(400);
         }
     });
-    res.render('homepage',user);
 };
 
 var findAllUsers = function(req,res){
