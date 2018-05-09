@@ -48,9 +48,7 @@ module.exports.updateExperience = function (req, res) {
 module.exports.renderFriends = function (req, res) {
     res.render('friends');
 }
-module.exports.renderZoranHomepage = function (req, res) {
-    res.render('zoranHomepage');
-}
+
 module.exports.renderSettings = function (req, res) {
     res.render('settings');
 }
@@ -86,9 +84,7 @@ module.exports.renderShares = function (req, res) {
                 res.sendStatus(404);
             }
         });
-
     }
-
 }
 
 module.exports.addShares = function (req, res) {

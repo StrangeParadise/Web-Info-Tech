@@ -10,7 +10,6 @@ router.get('/profile', controller.renderProfile);
 router.get('/experience:name', controller.renderExperience);
 router.post('/experience:name', controller.updateExperience);
 router.get('/friends', controller.renderFriends);
-router.get('/zoranHomepage', controller.renderZoranHomepage);
 router.get('/settings', controller.renderSettings);
 router.get('/settingsAccount', controller.renderSettingsAccount);
 router.get('/settingsPrivacy', controller.renderSettingsPrivacy);
