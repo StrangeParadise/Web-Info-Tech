@@ -9,28 +9,32 @@
 <h1>Lights in the Heaven</h1>
 <div class="login">
     <h1>Login</h1>
-    <form action="/homepage">
+    <form action="/homepage", method="get">
         Username<br>
-        <input type="text" name="username"><br>
+        <input type="text" name="userName"><br>
         Password<br>
         <input type="password" name="password"><br>
         <input type="checkbox" name="rememberUsername">Remember Username<br>
         <input type="checkbox" name="autoLogin">Auto-login<br>
-        <input type="submit" value="Login" onclick="">
+        <input type="submit" value="Login">
     </form>
 </div>
 
 <div class="register">
     <h1>Register</h1>
-    <form action="/homepage">
-        Email<br>
+    <form action="/homepage", method="post">
+        Email:<br>
         <input type="email" name="email"><br>
-        Username<br>
-        <input type="text" name="username"><br>
-        Password<br>
+        Username:<br>
+        <input type="text" name="userName"><br>
+        Password:<br>
         <input type="password" name="password"><br>
-        Confirm Password<br>
+        Confirm Password:<br>
         <input type="password" name="repeatPassword"><br>
+        First Name:<br>
+        <input type="text" name="firstName"><br>
+        Last Name:<br>
+        <input type="text" name="lastName"><br>
         Gender: <input type="radio" name="gender" value="male">Male
         <input type="radio" name="gender" value="female">Female
         <input type="radio" name="gender" value="other">Other<br>

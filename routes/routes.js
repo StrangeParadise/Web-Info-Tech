@@ -24,9 +24,12 @@ router.post('/wishEdit:name', controller.updateWishes);
 router.get('/remember', controller.renderRemember);
 
 
+router.get('/homepage', controller.renderNewHomepage);
+
+
 // DB part
 router.get('/api',controller.findAllUsers);
-router.post('/api',controller.createUser);
+router.post('/homepage',controller.createUser);
 router.get('/api/:name',controller.findOneUser);
 
 module.exports = router;

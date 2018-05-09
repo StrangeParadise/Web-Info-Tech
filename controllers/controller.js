@@ -21,6 +21,21 @@ module.exports.renderHomepage = function (req, res) {
         }
     });
 }
+
+module.exports.renderNewHomepage = function (req, res) {
+    var uname = req.body.userName;
+    User.findOne(uname,function(err,user){
+        if(!err){
+            res.render('homepage',user);
+        }else{
+            res.sendStatus(404);
+        }
+    });
+}
+
+
+
+
 module.exports.renderProfile = function (req, res) {
     res.render('profile');
 }
@@ -201,7 +216,6 @@ module.exports.renderRemember = function (req, res) {
 }
 
 var createUser = function(req,res){
-    console.log(req.body.firstName);
     var user = new User({
         "email": req.body.email,
         "userName": req.body.userName,
@@ -218,6 +232,7 @@ var createUser = function(req,res){
             res.sendStatus(400);
         }
     });
+    res.render('homepage',user);
 };
 
 var findAllUsers = function(req,res){
@@ -232,6 +247,7 @@ var findAllUsers = function(req,res){
 
 var findOneUser = function(req,res){
     var uname = req.params.name;
+    console.log("userName: " + uname);
     User.findOne({userName:uname},function(err,user){
         if(!err){
             res.send(user);
