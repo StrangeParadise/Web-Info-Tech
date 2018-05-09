@@ -56,8 +56,16 @@ module.exports.renderWishesEdit = function (req, res) {
     res.render('wishesEdit');
 }
 module.exports.renderRemember = function (req, res) {
-    res.render('remember');
+    var c = req.params.comment;
+    User.findOne({com:c},function(err,comment){
+        if(!err){
+            res.render('remember',comment);
+        }else{
+            res.sendStatus(404);
+        }
+    });
 }
+
 
 var createUser = function(req,res){
     console.log(req.body.firstName);
@@ -118,9 +126,20 @@ var createComment = function(req,res){
     );
 };
 
+var findComment = function(req,res){
+    Comment.find(function(err,comments){
+        if(!err){
+            res.send(comments);
+        }else{
+            res.sendStatus(404);
+        }
+    });
+};
+
 
 module.exports.createUser = createUser;
 module.exports.findAllUsers = findAllUsers;
 module.exports.findOneUser = findOneUser;
 
 module.exports.createComment = createComment;
+module.exports.findComment = findComment;

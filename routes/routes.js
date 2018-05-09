@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/controller');
 
+
 router.get('/', controller.renderIndex);
 router.get('/comingSoon', controller.renderComingSoon);
 router.get('/login&register', controller.renderLoginRegister);
@@ -27,7 +28,8 @@ router.get('/api',controller.findAllUsers);
 router.post('/api',controller.createUser);
 router.get('/api/:id',controller.findOneUser);
 
-router.post('/remember', controller.createComment);
+router.get('/api', controller.findComment);
+router.post('/api', controller.createComment);
 
 module.exports = router;
 

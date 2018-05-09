@@ -63,17 +63,16 @@
             <!-- block3 -->
             <div class="block">
                 <div class="block-main">
-                    <p>&nbsp;&nbsp;Friends' Comments</p>
+                    <p>Friends' Comments</p>
                     <ul id="wish-list">
-                        <li><a href="homepage"><img class="wishimage" src="/img/47.jpg" />Ryner:</a>&nbsp;&nbsp;..........</li>
-                        <li><a href="homepage"><img class="wishimage" src="/img/47.jpg" />Ryner:</a>&nbsp;&nbsp;..........</li>
+                        <%= com.comment %>
                     </ul>
                 </div>
 
                 <div class="block-main">
                     <button class="collapsible">Comment</button>
                     <div id="comment">
-                        <form method="post" action="/remember">
+                        <form method="post" action="/remember" name="commentForm" onsubmit="return validateForm()">
                             <textarea id="commentText" name="comment"></textarea>
                             <input type="submit" value="Submit">
                         </form>
@@ -88,6 +87,15 @@
         <div style="clear:both"></div>
     </div>
 </div>
+<script>
+    function validateForm(){
+        var x = document.forms["commentForm"]["comment"].value;
+        if(x==""){
+            alert("Comment must not be blank");
+            return false;
+        }
+    }
+</script>
 <script>
     var coll = document.getElementsByClassName("collapsible");
     var i;
