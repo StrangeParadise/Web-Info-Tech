@@ -28,8 +28,8 @@ router.get('/api',controller.findAllUsers);
 router.post('/api',controller.createUser);
 router.get('/api/:id',controller.findOneUser);
 
-router.get('/api', controller.findComment);
-router.post('/api', controller.createComment);
+router.get('/apii', controller.findComment);
+router.post('/remember', controller.createComment);
 
 module.exports = router;
 

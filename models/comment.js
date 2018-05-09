@@ -2,7 +2,9 @@ var mongoose = require('mongoose');
 
 var commentSchema = mongoose.Schema(
     {
-        "comment":String
+        "avatar":String,
+        "comment":String,
+        "time":String
     }
 );
 

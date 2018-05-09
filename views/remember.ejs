@@ -65,7 +65,11 @@
                 <div class="block-main">
                     <p>Friends' Comments</p>
                     <ul id="wish-list">
-                        <%= com.comment %>
+                        <% comment.forEach(function (comment) { %>
+                        <li><img src="<%= comment.avatar%>" class="avatar">
+                            <%= comment.comment %>
+                        </li>
+                        <% }) %>
                     </ul>
                 </div>
 
@@ -92,6 +96,10 @@
         var x = document.forms["commentForm"]["comment"].value;
         if(x==""){
             alert("Comment must not be blank");
+            return false;
+        }
+        if(x.length > 140){
+            alert("Maximum length 140");
             return false;
         }
     }

@@ -165,3 +165,8 @@ a:hover{
     outline: none;
     font-size: 13px;
 }
+
+.avatar{
+    width:48px;
+    height:48px;
+}
