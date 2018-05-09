@@ -16,20 +16,58 @@ module.exports.renderLoginRegister = function (req, res) {
     res.render('loginRegister');
 }
 module.exports.renderHomepage = function (req, res) {
-    res.render('homepage');
+    var uname = req.params.name;
+    User.findOne({userName:uname},function(err,user){
+        if(!err){
+            res.render('homepage',user);
+        }else{
+            res.sendStatus(404);
+        }
+    });
 }
+
+module.exports.renderNewHomepage = function (req, res) {
+    var uname = req.body.userName;
+    User.findOne(uname,function(err,user){
+        if(!err){
+            res.render('homepage',user);
+        }else{
+            res.sendStatus(404);
+        }
+    });
+}
+
+
+
+
 module.exports.renderProfile = function (req, res) {
     res.render('profile');
 }
 module.exports.renderExperience = function (req, res) {
-    res.render('experience');
+    var uname = req.params.name;
+    User.findOne({userName:uname},function(err,user){
+        if(!err){
+            res.render('experience',user);
+        }else{
+            res.sendStatus(404);
+        }
+    });
+}
+
+module.exports.updateExperience = function (req, res) {
+    var uname = req.params.name;
+    User.findOneAndUpdate({userName:uname},{$set: {experience: {content:req.body.content, time:new Date}}},{new: true},function(err,user){
+        if(!err){
+            res.render('homepage',user);
+        }else{
+            res.sendStatus(404);
+        }
+    });
 }
 module.exports.renderFriends = function (req, res) {
     res.render('friends');
 }
-module.exports.renderZoranHomepage = function (req, res) {
-    res.render('zoranHomepage');
-}
+
 module.exports.renderSettings = function (req, res) {
     res.render('settings');
 }
@@ -46,17 +84,137 @@ module.exports.renderFamilyTree = function (req, res) {
     res.render('familyTree');
 }
 module.exports.renderShares = function (req, res) {
-    res.render('shares');
+    var uname = req.params.name;
+    if(req.query.id){
+        var id = req.query.id;
+        User.findOneAndUpdate({userName:uname},{$pull: {share: { _id : id }}},{new: true},function(err,user){
+            if(!err){
+                res.render('shares',user);
+            }else{
+                res.sendStatus(404);
+            }
+        });
+
+    }else{
+        User.findOne({userName:uname},function(err,user){
+            if(!err){
+                res.render('shares',user);
+            }else{
+                res.sendStatus(404);
+            }
+        });
+    }
 }
+
+module.exports.addShares = function (req, res) {
+    var uname = req.params.name;
+    User.findOneAndUpdate({userName:uname},{$push: {share: {title:req.body.title, content:req.body.content, time:new Date}}},{new: true},function(err,user){
+        if(!err){
+            res.render('shares',user);
+        }else{
+            res.sendStatus(404);
+        }
+    });
+}
+
+
 module.exports.renderWishes = function (req, res) {
-    res.render('wishes');
+    var uname = req.params.name;
+    if(req.query.like){
+        User.findOneAndUpdate({userName:uname},{$inc: {"wish.like":1}},{new: true},function(err,user){
+            if(!err){
+                User.find({}).sort('-wish.like').limit(10).exec(function(err, users) {
+                    if(!err){
+                        res.render('wishes',{user, users});
+                    }else{
+                        res.sendStatus(404);
+                    }
+                });
+
+            }else{
+                res.sendStatus(404);
+            }
+        });
+
+    }else {
+        User.findOne({userName: uname}, function (err, user) {
+            if (!err) {
+                User.find({}).sort('-wish.like').limit(10).exec(function(err, users) {
+                    if(!err){
+                        res.render('wishes',{user, users});
+                    }else{
+                        res.sendStatus(404);
+                    }
+                });
+            } else {
+                res.sendStatus(404);
+            }
+        });
+    }
 }
+
 module.exports.renderLatestWishes = function (req, res) {
-    res.render('latestWishes');
+    var uname = req.params.name;
+    if(req.query.like){
+        User.findOneAndUpdate({userName:uname},{$inc: {"wish.like":1}},{new: true},function(err,user){
+            if(!err){
+                User.find({}).sort('-wish.time').limit(10).exec(function(err, users) {
+                    if(!err){
+                        res.render('latestWishes',{user, users});
+                    }else{
+                        res.sendStatus(404);
+                    }
+                });
+
+            }else{
+                res.sendStatus(404);
+            }
+        });
+
+    }else {
+        User.findOne({userName: uname}, function (err, user) {
+            if (!err) {
+                User.find({}).sort('-wish.time').limit(10).exec(function(err, users) {
+                    if(!err){
+                        res.render('latestWishes',{user, users});
+                    }else{
+                        res.sendStatus(404);
+                    }
+                });
+            } else {
+                res.sendStatus(404);
+            }
+        });
+    }
 }
 module.exports.renderWishesEdit = function (req, res) {
-    res.render('wishesEdit');
+    var uname = req.params.name;
+    User.findOne({userName:uname},function(err,user){
+        if(!err){
+            res.render('wishesEdit',user);
+        }else{
+            res.sendStatus(404);
+        }
+    });
 }
+module.exports.updateWishes = function (req, res) {
+    var uname = req.params.name;
+    User.findOneAndUpdate({userName:uname},{$set: {"wish.content":req.body.content, "wish.time":new Date}},{new: true},function(err,user){
+        if(!err){
+            User.find({}).sort('-wish.like').limit(10).exec(function(err, users) {
+                if(!err){
+                    res.render('wishes',{user, users});
+                }else{
+                    res.sendStatus(404);
+                }
+            });
+        }else{
+            res.sendStatus(404);
+        }
+    });
+}
+
+
 module.exports.renderRemember = function (req, res) {
     Comment.find({}, function(err, docs){
         if(!err){
@@ -70,7 +228,9 @@ module.exports.renderRemember = function (req, res) {
 
 
 var createUser = function(req,res){
+
     //console.log(req.body.firstName);
+
     var user = new User({
         "email": req.body.email,
         "userName": req.body.userName,
@@ -87,6 +247,7 @@ var createUser = function(req,res){
             res.sendStatus(400);
         }
     });
+    res.render('homepage',user);
 };
 
 var findAllUsers = function(req,res){
@@ -100,8 +261,9 @@ var findAllUsers = function(req,res){
 };
 
 var findOneUser = function(req,res){
-    var userID = req.params.id;
-    User.findById(userID,function(err,user){
+    var uname = req.params.name;
+    console.log("userName: " + uname);
+    User.findOne({userName:uname},function(err,user){
         if(!err){
             res.send(user);
         }else{
@@ -158,6 +320,8 @@ var createEpitaph = function(req,res){
         }
     );
 };
+
+
 
 module.exports.createUser = createUser;
 module.exports.findAllUsers = findAllUsers;

@@ -6,27 +6,32 @@ const controller = require('../controllers/controller');
 router.get('/', controller.renderIndex);
 router.get('/comingSoon', controller.renderComingSoon);
 router.get('/login&register', controller.renderLoginRegister);
-router.get('/homepage', controller.renderHomepage);
+router.get('/homepage:name', controller.renderHomepage);
 router.get('/profile', controller.renderProfile);
-router.get('/experience', controller.renderExperience);
+router.get('/experience:name', controller.renderExperience);
+router.post('/experience:name', controller.updateExperience);
 router.get('/friends', controller.renderFriends);
-router.get('/zoranHomepage', controller.renderZoranHomepage);
 router.get('/settings', controller.renderSettings);
 router.get('/settingsAccount', controller.renderSettingsAccount);
 router.get('/settingsPrivacy', controller.renderSettingsPrivacy);
 router.get('/settingsBlockedUsers', controller.renderSettingsBlockedUsers);
 router.get('/familyTree', controller.renderFamilyTree);
-router.get('/shares', controller.renderShares);
-router.get('/wishes', controller.renderWishes);
-router.get('/latestWishes', controller.renderLatestWishes);
-router.get('/wishesEdit', controller.renderWishesEdit);
+router.get('/shares:name', controller.renderShares);
+router.post('/shares:name', controller.addShares);
+router.get('/wishes:name', controller.renderWishes);
+router.get('/latestWishes:name', controller.renderLatestWishes);
+router.get('/wishEdit:name', controller.renderWishesEdit);
+router.post('/wishEdit:name', controller.updateWishes);
 router.get('/remember', controller.renderRemember);
+
+
+router.get('/homepage', controller.renderNewHomepage);
 
 
 // DB part
 router.get('/api',controller.findAllUsers);
-router.post('/api',controller.createUser);
-router.get('/api/:id',controller.findOneUser);
+router.post('/homepage',controller.createUser);
+router.get('/api/:name',controller.findOneUser);
 
 router.get('/apii', controller.findComment);
 router.post('/remember', controller.createComment);
