@@ -15,25 +15,55 @@ module.exports.renderHomepage = function (req, res) {
     var uname = req.params.name;
     User.findOne({userName:uname},function(err,user){
         if(!err){
-            res.render('homepage',user);
+            res.render('homepage', user);
         }else{
             res.sendStatus(404);
         }
     });
 }
 
-module.exports.renderNewHomepage = function (req, res) {
+module.exports.login = function (req, res) {
     var uname = req.body.userName;
-    User.findOne(uname,function(err,user){
+    User.findOne({userName:uname},function(err,user){
         if(!err){
-            res.render('homepage',user);
+            if (req.body.password && req.body.password == user.password) {
+                res.render('homepage', user);
+            }
+            else {
+                // alert("Invalid Password!");
+                // return false;
+            }
         }else{
             res.sendStatus(404);
         }
     });
 }
 
-
+module.exports.register = function(req,res){
+    for(var i = 0; i < req.body.length; i++) {
+        if(req.body[i] == null) {
+            // alert("Please fill the blank.");
+            // return false;
+        }
+    }
+    var user = new User({
+        "email": req.body.email,
+        "userName": req.body.userName,
+        "password": req.body.password,
+        "firstName": req.body.firstName,
+        "lastName": req.body.lastName,
+        "gender": req.body.gender,
+        "dob": req.body.dob
+    });
+    user.save(function(err,newUser){
+        if(!err){
+            res.send(newUser);
+        }else{
+            res.sendStatus(400);
+        }
+    });
+    res.render('homepage',user);
+};
 
 
 module.exports.renderProfile = function (req, res) {
@@ -61,9 +91,9 @@ module.exports.updateExperience = function (req, res) {
     });
 }
 module.exports.renderFriends = function (req, res) {
+
     res.render('friends');
 }
-
 module.exports.renderSettings = function (req, res) {
     res.render('settings');
 }
@@ -90,7 +120,6 @@ module.exports.renderShares = function (req, res) {
                 res.sendStatus(404);
             }
         });
-
     }else{
         User.findOne({userName:uname},function(err,user){
             if(!err){
@@ -232,7 +261,6 @@ var createUser = function(req,res){
             res.sendStatus(400);
         }
     });
-    res.render('homepage',user);
 };
 
 var findAllUsers = function(req,res){

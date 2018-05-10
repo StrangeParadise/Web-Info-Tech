@@ -5,11 +5,13 @@ const controller = require('../controllers/controller');
 router.get('/', controller.renderIndex);
 router.get('/comingSoon', controller.renderComingSoon);
 router.get('/login&register', controller.renderLoginRegister);
+router.post('/login&register', controller.login);
+router.post('/homepage',controller.register);
 router.get('/homepage:name', controller.renderHomepage);
 router.get('/profile', controller.renderProfile);
 router.get('/experience:name', controller.renderExperience);
 router.post('/experience:name', controller.updateExperience);
-router.get('/friends', controller.renderFriends);
+router.get('/friends/:name', controller.renderFriends);
 router.get('/settings', controller.renderSettings);
 router.get('/settingsAccount', controller.renderSettingsAccount);
 router.get('/settingsPrivacy', controller.renderSettingsPrivacy);
@@ -24,12 +26,9 @@ router.post('/wishEdit:name', controller.updateWishes);
 router.get('/remember', controller.renderRemember);
 
 
-router.get('/homepage', controller.renderNewHomepage);
-
-
 // DB part
 router.get('/api',controller.findAllUsers);
-router.post('/homepage',controller.createUser);
+router.post('/api',controller.createUser);
 router.get('/api/:name',controller.findOneUser);
 
 module.exports = router;
