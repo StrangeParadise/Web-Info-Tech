@@ -91,7 +91,7 @@ module.exports.updateExperience = function (req, res) {
     });
 }
 module.exports.renderFriends = function (req, res) {
-    var uname = req.params.name;
+    var uname = req.params.userName;
     User.findOne({userName:uname},function(err,user){
         if(!err){
             res.render('friends',user);

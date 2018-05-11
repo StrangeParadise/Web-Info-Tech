@@ -6,6 +6,8 @@ const controller = require('../controllers/controller');
 router.get('/', controller.renderIndex);
 router.get('/comingSoon', controller.renderComingSoon);
 router.get('/login&register', controller.renderLoginRegister);
+router.post('/login&register', controller.login);
+router.post('/homepage/:userName', controller.register);
 router.get('/homepage/:userName', controller.renderHomepage);
 router.get('/profile', controller.renderProfile);
 router.get('/experience/:userName', controller.renderExperience);
