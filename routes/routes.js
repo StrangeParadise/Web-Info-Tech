@@ -11,7 +11,7 @@ router.get('/homepage:name', controller.renderHomepage);
 router.get('/profile', controller.renderProfile);
 router.get('/experience:name', controller.renderExperience);
 router.post('/experience:name', controller.updateExperience);
-router.get('/friends/:name', controller.renderFriends);
+router.get('/friends:name', controller.renderFriends);
 router.get('/settings', controller.renderSettings);
 router.get('/settingsAccount', controller.renderSettingsAccount);
 router.get('/settingsPrivacy', controller.renderSettingsPrivacy);

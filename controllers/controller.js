@@ -40,29 +40,27 @@ module.exports.login = function (req, res) {
 }
 
 module.exports.register = function(req,res){
-    for(var i = 0; i < req.body.length; i++) {
-        if(req.body[i] == null) {
-            // alert("Please fill the blank.");
-            // return false;
-        }
+    var dob = req.body.DOBMonth + "-" + req.body.DOBDay + "-" + req.body.DOBYear;
+    console.log(dob);
+    if(req.body.email && req.body.userName && req.body.password && req.body.firstName && req.body.lastName && req.body.gender && dob) {
+        var user = new User({
+            "email": req.body.email,
+            "userName": req.body.userName,
+            "password": req.body.password,
+            "firstName": req.body.firstName,
+            "lastName": req.body.lastName,
+            "gender": req.body.gender,
+            "dob": dob
+        });
+        user.save(function (err, newUser) {
+            if (!err) {
+                res.send(newUser);
+            } else {
+                res.sendStatus(400);
+            }
+        });
+        res.render('homepage', user);
     }
-    var user = new User({
-        "email": req.body.email,
-        "userName": req.body.userName,
-        "password": req.body.password,
-        "firstName": req.body.firstName,
-        "lastName": req.body.lastName,
-        "gender": req.body.gender,
-        "dob": req.body.dob
-    });
-    user.save(function(err,newUser){
-        if(!err){
-            res.send(newUser);
-        }else{
-            res.sendStatus(400);
-        }
-    });
-    res.render('homepage',user);
 };
 
 
@@ -91,8 +89,14 @@ module.exports.updateExperience = function (req, res) {
     });
 }
 module.exports.renderFriends = function (req, res) {
-
-    res.render('friends');
+    var uname = req.params.name;
+    User.findOne({userName:uname},function(err,user){
+        if(!err){
+            res.render('friends',user);
+        }else{
+            res.sendStatus(404);
+        }
+    });
 }
 module.exports.renderSettings = function (req, res) {
     res.render('settings');
