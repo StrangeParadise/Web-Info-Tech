@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Aref+Ruqaa:400,700|Special+Elite|Dancing+Script:400,700');
+
+html {
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.3)), url("https://source.unsplash.com/7mbvu0biZgg/4188x2787");
+    background-size: cover;
+}
+
+h1 {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    color: ghostwhite;
+    font-family: 'Dancing Script', cursive;
+    font-weight: lighter;
+    font-size: 4em;
+}
+
+h2 {
+    text-align: center;
+    color: ghostwhite;
+    font-family: 'Aref Ruqaa', cursive;
+    font-weight: bolder;
+    font-size: 3em;
+}
+
+h3 {
+    text-align: center;
+    color: ghostwhite;
+    font-family: 'Aref Ruqaa', cursive;
+    font-weight: bolder;
+    font-size: 4em;
+}
+
+.content {
+    text-align: center;
+    color: ghostwhite;
+    font-family: 'special elite', cursive;
+    font-weight: lighter;
+    font-size: 1.5em;
+}
+
+.motto {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    color: ghostwhite;
+    font-family: 'Dancing Script', cursive;
+    font-weight: normal;
+    font-size: 1.5em;
+}
