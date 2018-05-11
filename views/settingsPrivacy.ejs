@@ -3,7 +3,7 @@
 <head>
     <title>Home</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="css/settingsPrivacy.css" rel="stylesheet" type="text/css" />
+    <link href="/css/settingsPrivacy.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -12,12 +12,12 @@
     <!-- up -->
     <div id="main-framework-header">
         <div id="user-info">
-            <a href="homepage">
+            <a href="homepage<%= userName %>">
                 <div id="user-portrait">
                     <img src="/img/47.jpg" />
                 </div>
                 <div id="user-id">
-                    Ryner
+                    <%= userName %>
                 </div></a>
         </div>
     </div>
@@ -27,19 +27,19 @@
         <!-- left -->
         <div id="main-framework-body-left">
             <ul id="navigation-list">
-                <li><a href="homepage">Home</a></li>
-                <li><a href="friends">Friends</a></li>
-                <li><a href="shares">Shares</a></li>
-                <li><a href="familyTree">Family Tree</a></li>
-                <li><a href="wishes">Wish Lists</a></li>
-                <li><a href="remember">Remember</a></li>
-                <li><a href="settings">Settings</a></li>
+                <li><a href="/homepage/<%= userName %>">⌂ Home</a></li>
+                <li><a href="/friends/<%= userName %>">☺ Friends</a></li>
+                <li><a href="/shares/<%= userName %>">✎ Shares</a></li>
+                <li><a href="/familyTree/<%= userName %>">Family Tree</a></li>
+                <li><a href="/wishes<%= userName %>">🗒 Wish Lists</a></li>
+                <li><a href="/remember/<%= userName %>">🕯 Remember</a></li>
+                <li><a href="/settings/<%= userName %>">⚙ Settings</a></li>
                 <li>
                     <ul id="navigation-list-settings">
-                        <li>- <a href="settings">Profile</a></li>
-                        <li>- <a href="settingsAccount">Account</a></li>
-                        <li>- <a href="settingsPrivacy">Privacy</a></li>
-                        <li>- <a href="settingsBlockedUsers">Blocked users</a></li>
+                        <li>- <a href="/settings/<%= userName%>">Profile</a></li>
+                        <li>- <a href="/settingsAccount/<%= userName%>">Account</a></li>
+                        <li>- <a href="/settingsPrivacy<%= userName%>">Privacy</a></li>
+                        <li>- <a href="/settingsBlockedUsers/<%= userName%>">Blocked users</a></li>
                     </ul>
                 </li>
             </ul>
