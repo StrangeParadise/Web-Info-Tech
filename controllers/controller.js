@@ -1,6 +1,7 @@
 require('../models/users.js');
 require('../models/comment.js');
 require('../models/epitaph.js');
+
 var mongoose = require('mongoose');
 var User = mongoose.model('users');
 var Comment = mongoose.model('Comment');
@@ -34,8 +35,7 @@ module.exports.login = function (req, res) {
                 res.render('homepage', user);
             }
             else {
-                // alert("Invalid Password!");
-                // return false;
+                res.render("errorPage");
             }
         }else{
             res.sendStatus(404);
@@ -45,7 +45,6 @@ module.exports.login = function (req, res) {
 
 module.exports.register = function(req,res){
     var dob = req.body.DOBMonth + "-" + req.body.DOBDay + "-" + req.body.DOBYear;
-    console.log(dob);
     if(req.body.email && req.body.userName && req.body.password && req.body.firstName && req.body.lastName && req.body.gender && dob) {
         var user = new User({
             "email": req.body.email,
@@ -64,6 +63,9 @@ module.exports.register = function(req,res){
             }
         });
         res.render('homepage', user);
+    }
+    else {
+        res.render("errorPage");
     }
 };
 module.exports.renderProfile = function (req, res) {
@@ -391,8 +393,6 @@ var createEpitaph = function(req,res){
         }
     );
 };
-
-
 
 module.exports.createUser = createUser;
 module.exports.findAllUsers = findAllUsers;
