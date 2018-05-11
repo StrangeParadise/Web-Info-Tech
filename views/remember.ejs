@@ -53,7 +53,12 @@
             <div class="block">
                 <div class="block-content">
                     <p>Epitaph</p>
-                    <p><br>...........</p>
+                    <div id="epitaph">
+                    <form method="post">
+                        <textarea id="epitaphText" name="Epitaph"></textarea>
+                        <input type="submit" value="Submit">
+                    </form>
+                    </div>
                 </div>
                 <div class="block-bottom">
                     &nbsp;&nbsp;20:00&nbsp;&nbsp;Jun 2,2018
@@ -63,11 +68,32 @@
             <!-- block3 -->
             <div class="block">
                 <div class="block-main">
-                    <p>&nbsp;&nbsp;Friends' Comments</p>
-                    <ul id="wish-list">
-                        <li><a href="homepage"><img class="wishimage" src="/img/47.jpg" />Ryner:</a>&nbsp;&nbsp;..........</li>
-                        <li><a href="homepage"><img class="wishimage" src="/img/47.jpg" />Ryner:</a>&nbsp;&nbsp;..........</li>
-                    </ul>
+                    <p>Friends' Comments</p>
+                    <div class="list">
+                        <ul id="wish-list">
+                        <% comment.forEach(function (comment) { %>
+                            <li>
+                            <img src="<%= comment.avatar%>" class="avatar">
+                            <%= comment.comment %>
+                                <div id="time">
+                                <%= comment.time%>
+                                </div>
+                                <hr>
+                        <% }) %>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="block-main">
+                    <button class="collapsible">Comment</button>
+                    <div id="comment">
+                        <form method="post" name="commentForm" onsubmit="return validateForm()">
+                            <textarea id="commentText" name="comment"></textarea>
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
                 </div>
             </div>
 
@@ -78,5 +104,35 @@
         <div style="clear:both"></div>
     </div>
 </div>
+<script>
+    function validateForm(){
+        var x = document.forms["commentForm"]["comment"].value;
+        if(x==""){
+            alert("Comment must not be blank");
+            return false;
+        }
+        if(x.length > 140){
+            alert("Maximum length 140");
+            return false;
+        }
+
+    }
+</script>
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+</script>
 </body>
 </html>

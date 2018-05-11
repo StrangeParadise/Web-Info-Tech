@@ -9,3 +9,5 @@ mongoose.connect('mongodb://Zoran:123456@ds263759.mlab.com:63759/lightsintheheav
 });
 
 require('./users.js');
+require('./comment.js');
+require('./epitaph');
