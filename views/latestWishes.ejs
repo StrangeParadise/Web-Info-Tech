@@ -13,12 +13,12 @@
     <!-- up -->
     <div id="main-framework-header">
         <div id="user-info">
-            <a href="homepage<%= userName %>">
+            <a href="/homepage/<%= user.userName %>">
                 <div id="user-portrait">
                     <img src="/img/47.jpg" />
                 </div>
                 <div id="user-id">
-                    <%= userName %>
+                    <%= user.userName %>
                 </div></a>
         </div>
     </div>
@@ -28,13 +28,13 @@
         <!-- left -->
         <div id="main-framework-body-left">
             <ul id="navigation-list">
-                <li><a href="/homepage/<%= userName %>">⌂ Home</a></li>
-                <li><a href="/friends/<%= userName %>">☺ Friends</a></li>
-                <li><a href="/shares/<%= userName %>">✎ Shares</a></li>
-                <li><a href="/familyTree/<%= userName %>">Family Tree</a></li>
-                <li><a href="/wishes/<%= userName %>">🗒 Wish Lists</a></li>
-                <li><a href="/remember/<%= userName %>">🕯 Remember</a></li>
-                <li><a href="/settings/<%= userName %>">⚙ Settings</a></li>
+                <li><a href="/homepage/<%= user.userName %>">⌂ Home</a></li>
+                <li><a href="/friends/<%= user.userName %>">☺ Friends</a></li>
+                <li><a href="/shares/<%= user.userName %>">✎ Shares</a></li>
+                <li><a href="/familyTree/<%= user.userName %>">Family Tree</a></li>
+                <li><a href="/wishes/<%= user.userName %>">🗒 Wish Lists</a></li>
+                <li><a href="/remember/<%= user.userName %>">🕯 Remember</a></li>
+                <li><a href="/settings/<%= user.userName %>">⚙ Settings</a></li>
             </ul>
         </div>
 
@@ -44,11 +44,11 @@
             <!-- block1 -->
             <div class="block">
                 <div class="block-content">
-                    <p><a href="wishEdit<%= user.userName %>">My Wishes</a></p>
+                    <p><a href="/wishEdit/<%= user.userName %>">My Wishes</a></p>
                     <p><br><%= user.wish.content %></p>
                 </div>
                 <div class="block-bottom">
-                    <%= user.wish.time %><a href="wishes<%= user.userName %>?like=1">&nbsp;&nbsp;👍<%= user.wish.like %></a>
+                    <%= user.wish.time %><a href="/wishes/<%= user.userName %>?like=1">&nbsp;&nbsp;👍<%= user.wish.like %></a>
                 </div>
             </div>
 
@@ -56,10 +56,10 @@
             <div class="block">
                 <div class="block-main">
                     <p>&nbsp;&nbsp;Others' Wishes</p>
-                    <br><p>&nbsp;&nbsp;&nbsp;&nbsp;<a href="wishes<%= user.userName %>">Most Concerned</a>&nbsp;&nbsp;|&nbsp;&nbsp;Latest</p>
+                    <br><p>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/wishes/<%= user.userName %>">Most Concerned</a>&nbsp;&nbsp;|&nbsp;&nbsp;Latest</p>
                     <ul id="wish-list">
                         <%users.forEach(function(u){ %>
-                        <li><a href="homepage<%= u.userName %>"><img class="wishimage" src="/img/47.jpg" /><%= u.userName %>:</a>&nbsp;&nbsp;<%= u.wish.content %><a href="wishes<%= u.userName %>?like=1">&nbsp;&nbsp;👍<%= u.wish.like %></a></li>
+                        <li><a href="/homepage/<%= u.userName %>"><img class="wishimage" src="/img/47.jpg" /><%= u.userName %>:</a>&nbsp;&nbsp;<%= u.wish.content %><a href="/wishes/<%= u.userName %>?like=1">&nbsp;&nbsp;👍<%= u.wish.like %></a></li>
                         <% })%>
 
                     </ul>

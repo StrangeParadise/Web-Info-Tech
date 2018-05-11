@@ -41,7 +41,7 @@ module.exports.renderProfile = function (req, res) {
     res.render('profile');
 }
 module.exports.renderExperience = function (req, res) {
-    var uname = req.body.userName;
+    var uname = req.params.userName;
     User.findOne({userName:uname},function(err,user){
         if(!err){
             res.render('experience',user);
@@ -52,7 +52,7 @@ module.exports.renderExperience = function (req, res) {
 }
 
 module.exports.updateExperience = function (req, res) {
-    var uname = req.body.userName;
+    var uname = req.params.userName;
     User.findOneAndUpdate({userName:uname},{$set: {experience: {content:req.body.content, time:new Date}}},{new: true},function(err,user){
         if(!err){
             res.render('homepage',user);
@@ -123,12 +123,12 @@ module.exports.renderFamilyTree = function (req, res) {
     });
 };
 module.exports.renderShares = function (req, res) {
-    var uname = req.body.userName;
+    var uname = req.params.userName;
     if(req.query.id){
         var id = req.query.id;
         User.findOneAndUpdate({userName:uname},{$pull: {share: { _id : id }}},{new: true},function(err,user){
             if(!err){
-                res.render('shares', {user});
+                res.render('shares', user);
             }else{
                 res.sendStatus(404);
             }
@@ -146,7 +146,7 @@ module.exports.renderShares = function (req, res) {
 }
 
 module.exports.addShares = function (req, res) {
-    var uname = req.body.userName;
+    var uname = req.params.userName;
     User.findOneAndUpdate({userName:uname},{$push: {share: {title:req.body.title, content:req.body.content, time:new Date}}},{new: true},function(err,user){
         if(!err){
             res.render('shares',user);
@@ -158,7 +158,7 @@ module.exports.addShares = function (req, res) {
 
 
 module.exports.renderWishes = function (req, res) {
-    var uname = req.body.userName;
+    var uname = req.params.userName;
     if(req.query.like){
         User.findOneAndUpdate({userName:uname},{$inc: {"wish.like":1}},{new: true},function(err,user){
             if(!err){
@@ -193,7 +193,7 @@ module.exports.renderWishes = function (req, res) {
 }
 
 module.exports.renderLatestWishes = function (req, res) {
-    var uname = req.body.userName;
+    var uname = req.params.userName;
     if(req.query.like){
         User.findOneAndUpdate({userName:uname},{$inc: {"wish.like":1}},{new: true},function(err,user){
             if(!err){
@@ -227,7 +227,7 @@ module.exports.renderLatestWishes = function (req, res) {
     }
 }
 module.exports.renderWishesEdit = function (req, res) {
-    var uname = req.body.userName;
+    var uname = req.params.userName;
     User.findOne({userName:uname},function(err,user){
         if(!err){
             res.render('wishesEdit',user);
@@ -237,7 +237,7 @@ module.exports.renderWishesEdit = function (req, res) {
     });
 }
 module.exports.updateWishes = function (req, res) {
-    var uname = req.body.userName;
+    var uname = req.params.userName;
     User.findOneAndUpdate({userName:uname},{$set: {"wish.content":req.body.content, "wish.time":new Date}},{new: true},function(err,user){
         if(!err){
             User.find({}).sort('-wish.like').limit(10).exec(function(err, users) {

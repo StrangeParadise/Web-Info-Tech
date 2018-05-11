@@ -13,7 +13,7 @@
     <!-- up -->
     <div id="main-framework-header">
         <div id="user-info">
-            <a href="homepage<%= userName %>">
+            <a href="/homepage/<%= userName %>">
                 <div id="user-portrait">
                     <img src="/img/47.jpg" />
                 </div>
@@ -59,7 +59,7 @@
                 </div>
                 <div class="block-bottom">
                     <%= t.time %>
-                    <a href="shares<%= userName %>?id=<%= t._id %>">✘Delete</a>
+                    <a href="/shares/<%= userName %>?id=<%= t._id %>">✘Delete</a>
                 </div>
             </div>
             <% })%>

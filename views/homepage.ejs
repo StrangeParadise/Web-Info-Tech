@@ -13,7 +13,7 @@
     <!-- up -->
     <div id="main-framework-header">
         <div id="user-info">
-            <a href="homepage<%= userName %>">
+            <a href="/homepage/<%= userName %>">
                 <div id="user-portrait">
                     <img src="/img/47.jpg" />
                 </div>
@@ -44,7 +44,7 @@
             <!-- block1 -->
             <div class="block">
                 <div class="block-content">
-                    <p><a href="settings<%= userName %>">Profile</a></p>
+                    <p><a href="/settings/<%= userName %>">Profile</a></p>
                     <p>
                         <br>First Name:&nbsp;&nbsp;<%= firstName %>
                         <br>Last Name:&nbsp;&nbsp;<%= lastName %>
@@ -58,7 +58,7 @@
             <!-- block2 -->
             <div class="block">
                 <div class="block-content">
-                    <p><a href="experience<%=userName%>">Experience</a></p>
+                    <p><a href="/experience/<%=userName%>">Experience</a></p>
                     <p><br><%= experience.content %></p>
                 </div>
                 <div class="block-bottom">
