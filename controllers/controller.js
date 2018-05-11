@@ -101,8 +101,8 @@ module.exports.renderFriends = function (req, res) {
     });
 }
 module.exports.renderSettings = function (req, res) {
-    var uname = req.body.userName;
-    User.findOne(uname,function(err,user){
+    var uname = req.params.userName;
+    User.findOne({userName:uname},function(err,user){
         if(!err){
             res.render('settings',user);
         }else{
@@ -111,8 +111,8 @@ module.exports.renderSettings = function (req, res) {
     });
 }
 module.exports.renderSettingsAccount = function (req, res) {
-    var uname = req.body.userName;
-    User.findOne(uname,function(err,user){
+    var uname = req.params.userName;
+    User.findOne({userName:uname},function(err,user){
         if(!err){
             res.render('settingsAccount',user);
         }else{
@@ -121,29 +121,30 @@ module.exports.renderSettingsAccount = function (req, res) {
     });
 }
 module.exports.renderSettingsPrivacy = function (req, res) {
-    var uname = req.body.userName;
-    User.findOne(uname,function(err,user){
+    var uname = req.params.userName;
+    User.findOne({userName:uname},function(err,user){
         if(!err){
             res.render('settingsPrivacy',user);
         }else{
             res.sendStatus(404);
         }
     });
-};
+}
 module.exports.renderSettingsBlockedUsers = function (req, res) {
-    var uname = req.body.userName;
-    User.findOne(uname,function(err,user){
+    var uname = req.params.userName;
+    User.findOne({userName:uname},function(err,user){
         if(!err){
             res.render('settingsBlockedUsers',user);
         }else{
             res.sendStatus(404);
         }
     });
-};
+}
 module.exports.renderFamilyTree = function (req, res) {
-    User.findOne({},function(err, user){
+    var uname = req.params.userName;
+    User.findOne({userName:uname},function(err, user){
         if(!err) {
-            res.render('familyTree', {user});
+            res.render('familyTree', user);
         }
         else{
             res.sendStatus(404);
@@ -282,11 +283,12 @@ module.exports.updateWishes = function (req, res) {
 
 
 module.exports.renderRemember = function (req, res) {
-    User.findOne({},function(err, user){
+    var uname = req.params.userName;
+    User.findOne({userName:uname},function(err, user){
         if(!err){
             Comment.find({}, function(err, docs){
                 if(!err){
-                    res.render('remember', {comment:docs, user:user});
+                    res.render('remember', {comment:docs, user});
                 }
                 else{
                     res.sendStatus(404);
