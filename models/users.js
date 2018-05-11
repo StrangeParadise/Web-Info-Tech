@@ -11,7 +11,9 @@ var userSchema = mongoose.Schema(
         "dob": String,
         "experience":{content:String, time:Date},
         "share":[{title: String,content: String, time:Date}],
-        "wish":{content:String, like:Number, time:Date}
+        "wish":{content:String, like:Number, time:Date},
+        "avatar": String,
+        "friends": this
     }
 );
 mongoose.model('users', userSchema);
