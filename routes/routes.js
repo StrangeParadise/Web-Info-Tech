@@ -25,6 +25,7 @@ router.get('/latestWishes/:userName', controller.renderLatestWishes);
 router.get('/wishEdit/:userName', controller.renderWishesEdit);
 router.post('/wishEdit/:userName', controller.updateWishes);
 router.get('/remember/:userName', controller.renderRemember);
+router.get('/chat', controller.renderChat);
 
 
 // DB part

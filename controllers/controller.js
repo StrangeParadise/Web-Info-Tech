@@ -403,3 +403,7 @@ module.exports.findOneUser = findOneUser;
 module.exports.createComment = createComment;
 module.exports.findComment = findComment;
 module.exports.createEpitaph = createEpitaph;
+
+module.exports.renderChat = function (req, res) {
+    res.render('chat');
+}
