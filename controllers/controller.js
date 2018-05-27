@@ -31,7 +31,7 @@ module.exports.login = function (req, res) {
     var uname = req.body.userName;
     User.findOne({userName:uname},function(err,user){
         if(!err){
-            if (req.body.password && req.body.password == user.password) {
+            if (user != null && req.body.password && req.body.password == user.password) {
                 res.render('homepage', user);
             }
             else {
@@ -489,5 +489,5 @@ module.exports.findOneUser = findOneUser;
 // module.exports.createEpitaph = createEpitaph;
 
 module.exports.renderChat = function (req, res) {
-    res.render('chat');
+    res.sendFile(__dirname + '/../views/chat');
 }
