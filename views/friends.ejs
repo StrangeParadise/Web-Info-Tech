@@ -6,18 +6,26 @@
     <link href="/css/friends.css" rel="stylesheet" type="text/css" />
 </head>
 
+<script type="text/javascript">
+    function search() {
+        var keyword = document.getElementById("window_input").value;
+        window.location.href = "/friends/<%= user.userName %>?name=" + keyword;
+    }
+</script>
+
+
 <body>
 <div id="main-framework">
 
     <!-- up -->
     <div id="main-framework-header">
         <div id="user-info">
-            <a href="/homepage/<%= userName %>">
+            <a href="/homepage/<%= user.userName %>">
                 <div id="user-portrait">
-                    <img src="/img/47.jpg" />
+                    <img src="<%= user.avatar %>" />
                 </div>
                 <div id="user-id">
-                    <%= userName %>
+                    <%= user.userName %>
                 </div></a>
         </div>
     </div>
@@ -27,13 +35,13 @@
         <!-- left -->
         <div id="main-framework-body-left">
             <ul id="navigation-list">
-                <li><a href="/homepage/<%= userName %>">⌂ Home</a></li>
-                <li><a href="/friends/<%= userName %>">☺ Friends</a></li>
-                <li><a href="/shares/<%= userName %>">✎ Shares</a></li>
-                <li><a href="/familyTree/<%= userName %>">Family Tree</a></li>
-                <li><a href="/wishes/<%= userName %>">🗒 Wish Lists</a></li>
-                <li><a href="/remember/<%= userName %>">🕯 Remember</a></li>
-                <li><a href="/settings/<%= userName %>">⚙ Settings</a></li>
+                <li><a href="/homepage/<%= user.userName %>">⌂ Home</a></li>
+                <li><a href="/friends/<%= user.userName %>">☺ Friends</a></li>
+                <li><a href="/shares/<%= user.userName %>">✎ Shares</a></li>
+                <li><a href="/familyTree/<%= user.userName %>">Family Tree</a></li>
+                <li><a href="/wishes/<%= user.userName %>">🗒 Wish Lists</a></li>
+                <li><a href="/remember/<%= user.userName %>">🕯 Remember</a></li>
+                <li><a href="/settings/<%= user.userName %>">⚙ Settings</a></li>
             </ul>
         </div>
 
@@ -43,28 +51,24 @@
             <!-- block1 -->
 
             <div class="block-main">
-                <div class="top">
-                    <h2>Friend's List</h2>
+                <!-- block1 -->
+                <div class="block">
+                    <form name="search" onsubmit="search()">
+                        <br>&nbsp;&nbsp;<input type="text" name="name" id = "window_input" placeholder="User Name"/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<input class="s-button" type="submit" value="Search"><br>
+                        <br><br>
+                    </form>
                 </div>
+                <div class="top">
+                    <h2>Search Result</h2>
+                </div>
+
+                    <%users.forEach(function(u){ %>
                     <div class="friends">
-                        <img src="https://www.infrascan.net/demo/assets/img/avatar5.png" width="60px">
-                        <a href="#">Amy</a>
+                        <a href="/homepage/<%= u.userName %>"><img class="wishimage" src="<%= u.avatar %>" width="60px"/>&nbsp;&nbsp;&nbsp;<%= u.userName %></a>
                     </div>
-                    <hr>
-                    <div class="friends">
-                        <img src="https://www.infrascan.net/demo/assets/img/avatar5.png" width="60px">
-                        <a href="#">Ben</a>
-                    </div>
-                    <hr>
-                    <div class="friends">
-                        <img src="https://www.infrascan.net/demo/assets/img/avatar5.png" width="60px">
-                        <a href="#">Louis</a>
-                    </div>
-                    <hr>
-                    <div class="friends">
-                        <img src="/img/cat.jpg" width="60px">
-                        <a href="#">Zoran</a>
-                    </div>
+                    <% })%>
+
             </div>
 
 

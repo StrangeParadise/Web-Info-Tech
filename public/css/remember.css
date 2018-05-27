@@ -1,3 +1,13 @@
+html {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+    _filter:none;
+}
+
+
 body {
     margin:0px;
     background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.3)), url("https://source.unsplash.com/YeUVDKZWSZ4/4671x3114");
@@ -208,3 +218,4 @@ hr{
     background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
     background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
 }
+

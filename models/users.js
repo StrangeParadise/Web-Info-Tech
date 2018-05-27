@@ -10,6 +10,7 @@ var userSchema = mongoose.Schema(
         "gender": String,
         "dob": String,
         "experience":{content:String, time:Date},
+        "epitaph":{content:String, like:Number, time:Date},
         "share":[{title: String,content: String, time:Date}],
         "wish":{content:String, like:Number, time:Date},
         "avatar": String,

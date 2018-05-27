@@ -4,8 +4,8 @@ require('../models/epitaph.js');
 
 var mongoose = require('mongoose');
 var User = mongoose.model('users');
-var Comment = mongoose.model('Comment');
-var Epitaph = mongoose.model('Epitaph');
+// var Comment = mongoose.model('Comment');
+// var Epitaph = mongoose.model('Epitaph');
 
 module.exports.renderIndex = function (req, res) {
     res.render('index');
@@ -53,7 +53,11 @@ module.exports.register = function(req,res){
             "firstName": req.body.firstName,
             "lastName": req.body.lastName,
             "gender": req.body.gender,
-            "dob": dob
+            "dob": dob,
+            "share": [],
+            "avatar":"https://www.w3schools.com/howto/img_avatar.png",
+            "wish": {"content": null, "time": null, "like": 0},
+            "epitaph": {"content": null, "time": null, "like": 0},
         });
         user.save(function (err, newUser) {
             if (!err) {
@@ -92,11 +96,57 @@ module.exports.updateExperience = function (req, res) {
         }
     });
 }
+
+module.exports.renderEpitaph = function (req, res) {
+    var uname = req.params.userName
+    if(req.query.like){
+        User.findOneAndUpdate({userName:uname},{$inc: {"epitaph.like":1}},{new: true},function(err,user){
+            if(!err){
+                res.render('remember',user);
+            }else{
+                res.sendStatus(404);
+            }
+        })
+    }else{
+        User.findOne({userName:uname},function(err,user){
+            if(!err){
+                res.render('epitaph',user);
+            }else{
+                res.sendStatus(404);
+            }
+        });
+    }
+
+}
+
+module.exports.updateEpitaph = function (req, res) {
+    var uname = req.params.userName;
+
+    User.findOneAndUpdate({userName:uname},{$set: {"epitaph.content":req.body.content, "epitaph.time":new Date}},{new: true},function(err,user){
+        if(!err){
+            res.render('remember',user);
+        }else{
+            res.sendStatus(404);
+        }
+    });
+}
+
+
 module.exports.renderFriends = function (req, res) {
     var uname = req.params.userName;
+    var users = [];
+    if(req.query.name){
+        User.find({userName:{ $regex: req.query.name, $options: 'i'}},function(err,userss){
+            if(!err){
+                users = userss;
+            }else{
+                res.sendStatus(404);
+            }
+        }).sort('userName');
+    }
     User.findOne({userName:uname},function(err,user){
         if(!err){
-            res.render('friends',user);
+            res.render('friends',{user,users});
         }else{
             res.sendStatus(404);
         }
@@ -112,6 +162,18 @@ module.exports.renderSettings = function (req, res) {
         }
     });
 }
+module.exports.setProfile = function (req, res) {
+    var db = req.body.DOBMonth + "-" + req.body.DOBDay + "-" + req.body.DOBYear;
+    var uname = req.params.userName;
+    User.findOneAndUpdate({userName:uname},{$set: {firstName:req.body.firstName, lastName:req.body.lastName, gender:req.body.gender, email: req.body.email, dob: db, avatar: req.body.avatar }},{new: true},function(err,user){
+        if(!err){
+            res.render('homepage',user);
+        }else{
+            res.sendStatus(404);
+        }
+    });
+}
+
 module.exports.renderSettingsAccount = function (req, res) {
     var uname = req.params.userName;
     User.findOne({userName:uname},function(err,user){
@@ -122,6 +184,23 @@ module.exports.renderSettingsAccount = function (req, res) {
         }
     });
 }
+module.exports.setAccount = function (req, res) {
+    if(req.body.newpassword == req.body.confirm_new_password){
+        var uname = req.params.userName;
+        User.findOneAndUpdate({userName:uname, password:req.body.oldpassword},{$set: {password:req.body.newpassword}},{new: true},function(err,user){
+            if(!err){
+                res.render('homepage',user);
+            }else{
+                res.sendStatus(404);
+            }
+        });
+    }else{
+        res.sendStatus(404);
+    }
+
+}
+
+
 module.exports.renderSettingsPrivacy = function (req, res) {
     var uname = req.params.userName;
     User.findOne({userName:uname},function(err,user){
@@ -190,11 +269,17 @@ module.exports.addShares = function (req, res) {
 module.exports.renderWishes = function (req, res) {
     var uname = req.params.userName;
     if(req.query.like){
-        User.findOneAndUpdate({userName:uname},{$inc: {"wish.like":1}},{new: true},function(err,user){
+        User.findOneAndUpdate({userName:req.query.like},{$inc: {"wish.like":1}},{new: true},function(err,userlike){
             if(!err){
                 User.find({}).sort('-wish.like').limit(10).exec(function(err, users) {
                     if(!err){
-                        res.render('wishes',{user, users});
+                        User.findOne({userName:uname},function(err,user) {
+                            if (!err) {
+                                res.render('wishes', {user, users});
+                            } else {
+                                res.sendStatus(404);
+                            }
+                        });
                     }else{
                         res.sendStatus(404);
                     }
@@ -225,11 +310,17 @@ module.exports.renderWishes = function (req, res) {
 module.exports.renderLatestWishes = function (req, res) {
     var uname = req.params.userName;
     if(req.query.like){
-        User.findOneAndUpdate({userName:uname},{$inc: {"wish.like":1}},{new: true},function(err,user){
+        User.findOneAndUpdate({userName:req.query.like},{$inc: {"wish.like":1}},{new: true},function(err,userlike){
             if(!err){
                 User.find({}).sort('-wish.time').limit(10).exec(function(err, users) {
                     if(!err){
-                        res.render('latestWishes',{user, users});
+                        User.findOne({userName:uname},function(err,user) {
+                            if (!err) {
+                                res.render('latestWishes', {user, users});
+                            } else {
+                                res.sendStatus(404);
+                            }
+                        });
                     }else{
                         res.sendStatus(404);
                     }
@@ -288,14 +379,7 @@ module.exports.renderRemember = function (req, res) {
     var uname = req.params.userName;
     User.findOne({userName:uname},function(err, user){
         if(!err){
-            Comment.find({}, function(err, docs){
-                if(!err){
-                    res.render('remember', {comment:docs, user});
-                }
-                else{
-                    res.sendStatus(404);
-                }
-            });
+            res.render('remember', user);
         }
         else{
             res.sendStatus(404);
@@ -347,62 +431,62 @@ var findOneUser = function(req,res){
     });
 };
 
-var createComment = function(req,res){
-    var comment = new Comment(
-        {
-            "avatar": "/img/47.jpg",
-            "comment":req.body.comment,
-            "time": (new Date()).toLocaleString()
-        }
-    );
-    comment.save(function(err,newComment)
-        {
-            if (!err){
-                res.send(newComment);
-            }
-            else{
-                res.sendStatus(400)
-            }
-        }
-    );
-};
+// var createComment = function(req,res){
+//     var comment = new Comment(
+//         {
+//             "avatar": "/img/47.jpg",
+//             "comment":req.body.comment,
+//             "time": (new Date()).toLocaleString()
+//         }
+//     );
+//     comment.save(function(err,newComment)
+//         {
+//             if (!err){
+//                 res.send(newComment);
+//             }
+//             else{
+//                 res.sendStatus(400)
+//             }
+//         }
+//     );
+// };
 
-var findComment = function(req,res){
-    Comment.find(function(err,comments){
-        if(!err){
-            res.send(comments);
-        }else{
-            res.sendStatus(404);
-        }
-    });
-};
+// var findComment = function(req,res){
+//     Comment.find(function(err,comments){
+//         if(!err){
+//             res.send(comments);
+//         }else{
+//             res.sendStatus(404);
+//         }
+//     });
+// };
 
-var createEpitaph = function(req,res){
-    var epitaph = new Epitaph(
-        {
-            "epitaph":req.body.epitaph,
-            "time": (new Date()).toLocaleString()
-        }
-    );
-    epitaph.save(function(err,newEpitaph)
-        {
-            if (!err){
-                res.send(newEpitaph);
-            }
-            else{
-                res.sendStatus(400)
-            }
-        }
-    );
-};
+// var createEpitaph = function(req,res){
+//     var epitaph = new Epitaph(
+//         {
+//             "epitaph":req.body.epitaph,
+//             "time": (new Date()).toLocaleString()
+//         }
+//     );
+//     epitaph.save(function(err,newEpitaph)
+//         {
+//             if (!err){
+//                 res.send(newEpitaph);
+//             }
+//             else{
+//                 res.sendStatus(400)
+//             }
+//         }
+//     );
+// };
 
 module.exports.createUser = createUser;
 module.exports.findAllUsers = findAllUsers;
 module.exports.findOneUser = findOneUser;
 
-module.exports.createComment = createComment;
-module.exports.findComment = findComment;
-module.exports.createEpitaph = createEpitaph;
+// module.exports.createComment = createComment;
+// module.exports.findComment = findComment;
+// module.exports.createEpitaph = createEpitaph;
 
 module.exports.renderChat = function (req, res) {
     res.render('chat');

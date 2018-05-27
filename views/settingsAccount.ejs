@@ -14,7 +14,7 @@
         <div id="user-info">
             <a href="/homepage/<%= userName %>">
                 <div id="user-portrait">
-                    <img src="/img/47.jpg" />
+                    <img src="<%= avatar %>" />
                 </div>
                 <div id="user-id">
                     <%= userName %>
@@ -52,15 +52,14 @@
                 <h2 id="page-title">Change Password</h2>
                 <hr>
                 <div id="form-group">
-                    <form>
+                    <form name="password" method="post">
                         Old password<br>
                         <input class="form-control" type="password" name="oldpassword"><br><br>
                         New password<br>
                         <input class="form-control" type="password" name="newpassword"><br><br>
                         Confirm new password<br>
                         <input class="form-control" type="password" name="confirm_new_password"><br><br>
-                        <button type="submit">Update password</button>
-                        <span><a href="/password_reset">I forgot my passowrd</a></span>
+                        <input class="s-button" type="submit">
                     </form>
                 </div>
             </div>

@@ -15,7 +15,7 @@
         <div id="user-info">
             <a href="/homepage/<%= user.userName %>">
                 <div id="user-portrait">
-                    <img src="/img/47.jpg" />
+                    <img src="<%= user.avatar %>" />
                 </div>
                 <div id="user-id">
                     <%= user.userName %>
@@ -48,7 +48,7 @@
                     <p><br><%= user.wish.content %></p>
                 </div>
                 <div class="block-bottom">
-                    <%= user.wish.time %><a href="/wishes/<%= user.userName %>?like=1">&nbsp;&nbsp;👍<%= user.wish.like %></a>
+                    <%= user.wish.time %><a href="/wishes/<%= user.userName %>?like=<%= user.userName %>">&nbsp;&nbsp;👍<%= user.wish.like %></a>
                 </div>
             </div>
 
@@ -61,7 +61,7 @@
 
 
                         <%users.forEach(function(u){ %>
-                            <li><a href="/homepage/<%= u.userName %>"><img class="wishimage" src="/img/47.jpg" /><%= u.userName %>:</a>&nbsp;&nbsp;<%= u.wish.content %><a href="/wishes/<%= u.userName %>?like=1">&nbsp;&nbsp;👍<%= u.wish.like %></a></li>
+                            <li><a href="/homepage/<%= u.userName %>"><img class="wishimage" src="<%= u.avatar %>" /><%= u.userName %>:</a>&nbsp;&nbsp;<%= u.wish.content %><a href="/wishes/<%= user.userName %>?like=<%= u.userName %>">&nbsp;&nbsp;👍<%= u.wish.like %></a></li>
                         <% })%>
 
                     </ul>

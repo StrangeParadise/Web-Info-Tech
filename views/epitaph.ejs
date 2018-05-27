@@ -3,11 +3,10 @@
 <head>
     <title>Home</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="/css/remember.css" rel="stylesheet" type="text/css" />
+    <link href="/css/experience.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-
 <div id="main-framework">
 
     <!-- up -->
@@ -40,14 +39,15 @@
 
         <!-- right -->
         <div id="main-framework-body-right">
+
             <!-- block1 -->
             <div class="block">
-                <div class="block-content">
-                    <p><a href="/epitaph/<%=userName%>">Epitaph</a></p>
-                    <p><br><%= epitaph.content %></p>
-                </div>
-                <div class="block-bottom">
-                    <%= epitaph.time %><a href="/epitaph/<%= userName %>?like=1">&nbsp;&nbsp;❀<%= epitaph.like %></a>
+                <div class="block-main">
+                    <p><h1>Epitaph</h1></p>
+                    <form name="epitaph" method="post">
+                        <br>&nbsp;&nbsp;<textarea name="content" rows="20" cols="80"><%= epitaph.content %></textarea><br>
+                        <br>&nbsp;&nbsp;<input class="s-button" type="submit">
+                    </form>
                 </div>
             </div>
         </div>
@@ -56,6 +56,5 @@
         <div style="clear:both"></div>
     </div>
 </div>
-
 </body>
 </html>
